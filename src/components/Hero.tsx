@@ -48,7 +48,7 @@ export const Hero = () => {
               </button>
               <button className="group border-2 border-white text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
                 <Play className="h-5 w-5" />
-                <span>Learn More</span>
+                <a href="https://fankoin-white-paper-q7ux.bolt.host" target="_blank" rel="noopener noreferrer">White Paper</a>
               </button>
             </div>
 

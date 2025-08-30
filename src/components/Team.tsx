@@ -4,18 +4,18 @@ import { Users, Star, Briefcase, Code, Megaphone, Award } from 'lucide-react';
 export const Team = () => {
   const leadership = [
     {
-      name: "Anand Jaisingh",
-      role: "Founder",
-      company: "Businessofcinema.com",
+      name: "Businessofcinema.com",
+      role: "The leader in digital innovation since 2005",
+      company: "In collaboration with Ethereum founding team",
       category: "Leadership",
-      icon: <Briefcase className="h-8 w-8" />
+      icon: <div className="text-2xl font-bold">BOC</div>
     },
     {
       name: "Taylor Gerring",
       role: "Angel Investor & Co-founder",
       company: "Ethereum.org",
       category: "Leadership",
-      icon: <Star className="h-8 w-8" />
+      icon: <div className="text-2xl font-bold">ETH</div>
     }
   ];
 
@@ -189,7 +189,10 @@ export const Team = () => {
 
         {/* Leadership */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">Leadership Team</h3>
+          <h3 className="text-3xl font-bold text-white mb-4 text-center">Leadership Team</h3>
+          <p className="text-xl text-purple-200 mb-8 text-center max-w-4xl mx-auto">
+            Bringing FanKoin - the future of entertainment blockchain in collaboration with Ethereum founding team including co-founder Taylor Gerring
+          </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {leadership.map((member, index) => (
               <TeamCard key={index} member={member} index={index} />

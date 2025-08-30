@@ -7,31 +7,26 @@ export const Problem = () => {
       icon: <AlertTriangle className="h-10 w-10" />,
       title: "Fragmented Fan Engagement",
       description: "Fans scattered across multiple platforms with no unified experience or meaningful connection to creators",
-      impact: "$12B lost annually"
     },
     {
       icon: <DollarSign className="h-10 w-10" />,
       title: "Revenue Lost to Intermediaries",
       description: "Creators lose 30-70% of revenue to platform fees, agents, and complex distribution chains",
-      impact: "$18B in creator losses"
     },
     {
       icon: <Zap className="h-10 w-10" />,
       title: "Complex Tokenization",
       description: "Current blockchain solutions require technical expertise that 99% of creators don't possess",
-      impact: "95% adoption barrier"
     },
     {
       icon: <TrendingDown className="h-10 w-10" />,
       title: "Unsustainable Meme Tokens",
       description: "Most fan tokens are pump-and-dump schemes with no real utility or long-term value proposition",
-      impact: "$8B in fan losses"
     },
     {
       icon: <Lock className="h-10 w-10" />,
       title: "Illiquid Real-World Assets",
       description: "Royalties, tickets, and IP rights remain locked in traditional systems, preventing fan participation",
-      impact: "$25B untapped market"
     }
   ];
 
@@ -79,9 +74,6 @@ export const Problem = () => {
                   <p className="text-gray-300 mb-6 leading-relaxed">
                     {problem.description}
                   </p>
-                  <div className="bg-red-500/10 rounded-lg p-4 border border-red-500/20">
-                    <p className="text-red-300 font-bold text-lg">{problem.impact}</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -89,17 +81,12 @@ export const Problem = () => {
         </div>
 
         <div className="text-center fade-in-up">
-          <div className="inline-block bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-8 shadow-2xl">
-            <div className="flex items-center justify-center space-x-4 mb-4">
-              <div className="text-6xl">💰</div>
-              <ArrowDown className="h-8 w-8 text-white animate-bounce" />
-              <div className="text-6xl">📉</div>
-            </div>
+          <div className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-8 shadow-2xl">
             <p className="text-white font-bold text-2xl mb-2">
-              $63B+ Lost Annually
+              Industry Transformation Needed
             </p>
-            <p className="text-orange-100 text-lg">
-              Due to inefficiencies in entertainment monetization and fan engagement
+            <p className="text-pink-100 text-lg">
+              The entertainment industry needs a unified blockchain solution
             </p>
           </div>
         </div>
