@@ -176,76 +176,79 @@ export const Roadmap = () => {
           </div>
         </div>
 
-        {/* Market Size Section */}
-        <div className="mt-20 mb-16 fade-in-up">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold text-white mb-6">Market Opportunity</h3>
-            <p className="text-xl text-purple-200 max-w-3xl mx-auto">
-              Targeting the massive entertainment and creator economy markets
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all hover-lift">
-              <div className="text-center">
-                <div className="text-5xl font-black text-pink-400 mb-4">$1.5T</div>
-                <h4 className="text-xl font-bold text-white mb-3">Creator Economy</h4>
-                <p className="text-gray-300">Projected market size for creator monetization</p>
-              </div>
-            </div>
-            
-            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all hover-lift">
-              <div className="text-center">
-                <div className="text-5xl font-black text-purple-400 mb-4">$2.4T</div>
-                <h4 className="text-xl font-bold text-white mb-3">Entertainment Economy</h4>
-                <p className="text-gray-300">Total entertainment industry market value</p>
-              </div>
-            </div>
-            
-            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all hover-lift">
-              <div className="text-center">
-                <div className="text-5xl font-black text-pink-400 mb-4">40K</div>
-                <h4 className="text-xl font-bold text-white mb-3">Target Creators</h4>
-                <p className="text-gray-300">1% market share goal in 3 years</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* ICO Information */}
+        {/* Fan Koin Revenue Calculations */}
         <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl p-12 text-white shadow-2xl fade-in-up">
-          <div className="text-center mb-10">
-            <h3 className="text-4xl font-bold mb-6">ICO Launch Details</h3>
-            <p className="text-pink-100 text-xl">Join the future of entertainment tokenization</p>
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold mb-6">Fan Koin Founding Member Digital Asset</h3>
+            <p className="text-pink-100 text-xl mb-4">Revenue projections based on combined primary and secondary market performance</p>
+            <div className="inline-block bg-white/10 rounded-2xl p-6 border border-white/20">
+              <p className="text-white font-bold text-3xl mb-2">$999</p>
+              <p className="text-pink-100">Founding Member Token Price</p>
+            </div>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-black mb-2">$1</div>
-              <div className="text-pink-100">Token Launch Price</div>
+          {/* Revenue Table */}
+          <div className="bg-white/10 rounded-2xl p-8 border border-white/20 mb-8">
+            <h4 className="text-2xl font-bold text-center mb-8">Revenue Per $999 Token Investment</h4>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-white/20">
+                    <th className="text-left py-4 px-6 text-pink-100 font-bold">Timeframe</th>
+                    <th className="text-center py-4 px-6 text-pink-100 font-bold">2026</th>
+                    <th className="text-center py-4 px-6 text-pink-100 font-bold">2027</th>
+                    <th className="text-center py-4 px-6 text-pink-100 font-bold">2028</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
+                    <td className="py-4 px-6 text-white font-semibold">Yearly</td>
+                    <td className="py-4 px-6 text-center text-green-300 font-bold text-lg">$4,278.75</td>
+                    <td className="py-4 px-6 text-center text-green-300 font-bold text-lg">$33,757.50</td>
+                    <td className="py-4 px-6 text-center text-green-300 font-bold text-lg">$84,656.25</td>
+                  </tr>
+                  <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
+                    <td className="py-4 px-6 text-white font-semibold">Monthly</td>
+                    <td className="py-4 px-6 text-center text-blue-300 font-bold">$356.56</td>
+                    <td className="py-4 px-6 text-center text-blue-300 font-bold">$2,813.13</td>
+                    <td className="py-4 px-6 text-center text-blue-300 font-bold">$7,054.69</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-4 px-6 text-white font-semibold">Daily</td>
+                    <td className="py-4 px-6 text-center text-purple-300 font-bold">$11.71</td>
+                    <td className="py-4 px-6 text-center text-purple-300 font-bold">$92.42</td>
+                    <td className="py-4 px-6 text-center text-purple-300 font-bold">$231.79</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-black mb-2">$1,008</div>
-              <div className="text-pink-100">3-Year Target Price</div>
+          </div>
+
+          {/* Key Metrics */}
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center bg-white/10 rounded-2xl p-6 border border-white/20">
+              <div className="text-3xl font-black mb-2">$999</div>
+              <div className="text-pink-100">Initial Investment</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-black mb-2">1B</div>
-              <div className="text-pink-100">Total Supply</div>
+            <div className="text-center bg-white/10 rounded-2xl p-6 border border-white/20">
+              <div className="text-3xl font-black mb-2">$84,656</div>
+              <div className="text-pink-100">Annual Revenue by 2028</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-black mb-2">200M</div>
-              <div className="text-pink-100">Launch Supply</div>
+            <div className="text-center bg-white/10 rounded-2xl p-6 border border-white/20">
+              <div className="text-3xl font-black mb-2">8,475%</div>
+              <div className="text-pink-100">3-Year ROI</div>
             </div>
           </div>
           
           <div className="mt-10 text-center">
             <div className="inline-block bg-white/10 rounded-2xl p-6 border border-white/20">
               <p className="text-white font-bold text-2xl mb-2">ICO Launch: January 2025</p>
-              <p className="text-pink-100">Be among the first to join the entertainment revolution</p>
+              <p className="text-pink-100">Secure your founding member position in the entertainment revolution</p>
             </div>
           </div>
         </div>
-
         {/* Launch Stats */}
         <div className="mt-16 grid md:grid-cols-2 gap-8 fade-in-up">
           <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
