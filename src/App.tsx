@@ -6,6 +6,7 @@ import { Solution } from './components/Solution';
 import { TokenFlow } from './components/TokenFlow';
 import { CompetitiveAdvantage } from './components/CompetitiveAdvantage';
 import { Roadmap } from './components/Roadmap';
+import { Team } from './components/Team';
 import { BusinessModel } from './components/BusinessModel';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
@@ -20,6 +21,7 @@ function App() {
       <TokenFlow />
       <CompetitiveAdvantage />
       <Roadmap />
+      <Team />
       <BusinessModel />
       <CTA />
       <Footer />

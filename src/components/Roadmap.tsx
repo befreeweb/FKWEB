@@ -1,54 +1,70 @@
 import React from 'react';
-import { Rocket, Palette, Globe, Star, Calendar, CheckCircle } from 'lucide-react';
+import { Rocket, Palette, Globe, Star, Calendar, CheckCircle, TrendingUp, Users, DollarSign } from 'lucide-react';
 
 export const Roadmap = () => {
   const phases = [
     {
-      year: "2024",
-      quarter: "Q4",
-      title: "Foundation Launch",
+      year: "2025",
+      quarter: "Q3",
+      title: "Prototype Development",
       icon: <Rocket className="h-10 w-10" />,
-      status: "active",
+      status: "upcoming",
       items: [
-        "Blockchain launch & $FANK token distribution",
-        "MVP launchpad for fan tokens",
-        "Pilot partnerships with 50+ creators",
-        "Core team expansion to 25 members",
-        "Security audits and compliance framework"
+        "Prototype development and testing",
+        "Community outreach and engagement",
+        "Initial partnership setup with creators",
+        "Technical infrastructure foundation",
+        "Security framework implementation"
       ],
       color: "from-pink-500 to-purple-600",
-      progress: 75
+      progress: 0
     },
     {
       year: "2025",
-      quarter: "Q1-Q2",
-      title: "Ecosystem Growth", 
+      quarter: "Q4",
+      title: "Alpha Platform Launch", 
       icon: <Palette className="h-10 w-10" />,
-      status: "upcoming",
+      status: "planned",
       items: [
-        "NFT marketplace integration",
-        "Creator & fan dashboards launch",
-        "DAO governance voting system",
-        "100+ entertainment partnerships",
-        "Mobile app beta release"
+        "Alpha platform launch",
+        "Beta testing with limited creators and fans",
+        "Core functionality validation",
+        "User feedback collection and analysis",
+        "Platform optimization and refinements"
       ],
       color: "from-purple-500 to-pink-500",
       progress: 0
     },
     {
-      year: "2025",
-      quarter: "Q3-Q4",
-      title: "Global Expansion",
+      year: "2026",
+      quarter: "Q1",
+      title: "Full Platform Launch",
       icon: <Globe className="h-10 w-10" />,
       status: "planned",
       items: [
-        "RWA monetization platform",
-        "International market expansion",
-        "10M+ registered users target",
-        "Enterprise studio integrations",
-        "Cross-chain compatibility"
+        "Full platform launch to public",
+        "Comprehensive marketing campaign",
+        "Token sale/ICO execution",
+        "Major exchange listings",
+        "150+ creators and 50+ IP assets onboarded"
       ],
       color: "from-pink-600 to-purple-700",
+      progress: 0
+    },
+    {
+      year: "2026",
+      quarter: "Q2+",
+      title: "Platform Expansion",
+      icon: <TrendingUp className="h-10 w-10" />,
+      status: "planned",
+      items: [
+        "Platform expansion and scaling",
+        "Additional creator tools development",
+        "Strategic partnerships expansion",
+        "DAO governance implementation",
+        "Global market penetration"
+      ],
+      color: "from-purple-500 to-pink-600",
       progress: 0
     }
   ];
@@ -160,24 +176,117 @@ export const Roadmap = () => {
           </div>
         </div>
 
-        <div className="mt-20 text-center fade-in-up">
-          <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl p-12 text-white shadow-2xl">
-            <div className="flex items-center justify-center space-x-4 mb-8">
-              <Rocket className="h-12 w-12" />
-              <div className="text-6xl">🚀</div>
-            </div>
-            <h3 className="text-4xl font-bold mb-6">Join Us on This Journey</h3>
-            <p className="text-pink-100 mb-8 text-xl max-w-3xl mx-auto leading-relaxed">
-              Be part of the future of entertainment tokenization. Early adopters get exclusive access 
-              to token presales, founder benefits, and priority support.
+        {/* Market Size Section */}
+        <div className="mt-20 mb-16 fade-in-up">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-white mb-6">Market Opportunity</h3>
+            <p className="text-xl text-purple-200 max-w-3xl mx-auto">
+              Targeting the massive entertainment and creator economy markets
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-xl hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Get Early Access
-              </button>
-              <button className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-xl hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105">
-                View Detailed Timeline
-              </button>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all hover-lift">
+              <div className="text-center">
+                <div className="text-5xl font-black text-pink-400 mb-4">$1.5T</div>
+                <h4 className="text-xl font-bold text-white mb-3">Creator Economy</h4>
+                <p className="text-gray-300">Projected market size for creator monetization</p>
+              </div>
+            </div>
+            
+            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all hover-lift">
+              <div className="text-center">
+                <div className="text-5xl font-black text-purple-400 mb-4">$2.4T</div>
+                <h4 className="text-xl font-bold text-white mb-3">Entertainment Economy</h4>
+                <p className="text-gray-300">Total entertainment industry market value</p>
+              </div>
+            </div>
+            
+            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all hover-lift">
+              <div className="text-center">
+                <div className="text-5xl font-black text-pink-400 mb-4">40K</div>
+                <h4 className="text-xl font-bold text-white mb-3">Target Creators</h4>
+                <p className="text-gray-300">1% market share goal in 3 years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ICO Information */}
+        <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl p-12 text-white shadow-2xl fade-in-up">
+          <div className="text-center mb-10">
+            <h3 className="text-4xl font-bold mb-6">ICO Launch Details</h3>
+            <p className="text-pink-100 text-xl">Join the future of entertainment tokenization</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-black mb-2">$1</div>
+              <div className="text-pink-100">Token Launch Price</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-black mb-2">$1,008</div>
+              <div className="text-pink-100">3-Year Target Price</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-black mb-2">1B</div>
+              <div className="text-pink-100">Total Supply</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-black mb-2">200M</div>
+              <div className="text-pink-100">Launch Supply</div>
+            </div>
+          </div>
+          
+          <div className="mt-10 text-center">
+            <div className="inline-block bg-white/10 rounded-2xl p-6 border border-white/20">
+              <p className="text-white font-bold text-2xl mb-2">ICO Launch: January 2025</p>
+              <p className="text-pink-100">Be among the first to join the entertainment revolution</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Launch Stats */}
+        <div className="mt-16 grid md:grid-cols-2 gap-8 fade-in-up">
+          <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+            <h4 className="text-2xl font-bold text-white mb-6 flex items-center space-x-3">
+              <Users className="h-8 w-8 text-pink-400" />
+              <span>Launch Metrics</span>
+            </h4>
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Creators at Launch</span>
+                <span className="text-white font-bold">150+</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Digital Assets & IPs</span>
+                <span className="text-white font-bold">50+</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Total Fan Base Reach</span>
+                <span className="text-white font-bold">200M+</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+            <h4 className="text-2xl font-bold text-white mb-6 flex items-center space-x-3">
+              <DollarSign className="h-8 w-8 text-purple-400" />
+              <span>Growth Targets</span>
+            </h4>
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Total Creators (4M available)</span>
+                <span className="text-white font-bold">1% Target</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">3-Year Creator Goal</span>
+                <span className="text-white font-bold">40,000</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Market Position</span>
+                <span className="text-white font-bold">Industry Leader</span>
+              </div>
             </div>
           </div>
         </div>
