@@ -107,157 +107,42 @@ export const BusinessModel = () => {
           </div>
 
           <div className="relative slide-in-right">
-            <div className="bg-gray-800 rounded-3xl p-10 border border-gray-700 shadow-2xl hover-lift">
-              <h3 className="text-3xl font-bold text-white mb-10 text-center">Revenue Distribution</h3>
-              
-              {/* Enhanced Pie Chart Visualization */}
-              <div className="relative w-80 h-80 mx-auto mb-10">
-                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  {/* Pie segments */}
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="35"
-                    fill="none"
-                    stroke="url(#gradient1)"
-                    strokeWidth="15"
-                    strokeDasharray="25 75"
-                    strokeDashoffset="0"
-                    className="hover:stroke-width-20 transition-all cursor-pointer"
-                  />
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="35"
-                    fill="none"
-                    stroke="url(#gradient2)"
-                    strokeWidth="15"
-                    strokeDasharray="20 80"
-                    strokeDashoffset="-25"
-                    className="hover:stroke-width-20 transition-all cursor-pointer"
-                  />
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="35"
-                    fill="none"
-                    stroke="url(#gradient3)"
-                    strokeWidth="15"
-                    strokeDasharray="20 80"
-                    strokeDashoffset="-45"
-                    className="hover:stroke-width-20 transition-all cursor-pointer"
-                  />
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="35"
-                    fill="none"
-                    stroke="url(#gradient4)"
-                    strokeWidth="15"
-                    strokeDasharray="20 80"
-                    strokeDashoffset="-65"
-                    className="hover:stroke-width-20 transition-all cursor-pointer"
-                  />
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="35"
-                    fill="none"
-                    stroke="url(#gradient5)"
-                    strokeWidth="15"
-                    strokeDasharray="15 85"
-                    strokeDashoffset="-85"
-                    className="hover:stroke-width-20 transition-all cursor-pointer"
-                  />
-                  
-                  <defs>
-                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#ec4899" />
-                      <stop offset="100%" stopColor="#db2777" />
-                    </linearGradient>
-                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#a855f7" />
-                      <stop offset="100%" stopColor="#9333ea" />
-                    </linearGradient>
-                    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#db2777" />
-                      <stop offset="100%" stopColor="#a855f7" />
-                    </linearGradient>
-                    <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#9333ea" />
-                      <stop offset="100%" stopColor="#db2777" />
-                    </linearGradient>
-                    <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#ec4899" />
-                      <stop offset="100%" stopColor="#9333ea" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-                
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl font-black text-white mb-2">$FANK</div>
-                    <div className="text-pink-300 text-lg">Revenue</div>
-                    <div className="text-green-400 font-bold text-2xl mt-2">$50M+</div>
+            <div className="space-y-8">
+              <div className="bg-gray-800 rounded-3xl p-10 border border-gray-700 shadow-2xl hover-lift text-center">
+                <h3 className="text-3xl font-bold text-white mb-8">Market Opportunity</h3>
+                <div className="grid grid-cols-2 gap-8">
+                  <div>
+                    <div className="text-5xl font-black text-pink-400 mb-4">$1.5T</div>
+                    <h4 className="text-xl font-bold text-white mb-3">Creator Economy</h4>
+                    <p className="text-gray-300">Projected market size</p>
+                  </div>
+                  <div>
+                    <div className="text-5xl font-black text-purple-400 mb-4">$2.4T</div>
+                    <h4 className="text-xl font-bold text-white mb-3">Entertainment Economy</h4>
+                    <p className="text-gray-300">Total market value</p>
                   </div>
                 </div>
               </div>
-
-              <div className="grid grid-cols-2 gap-6 text-center">
-                <div className="bg-gray-700/50 rounded-xl p-6 hover-lift">
-                  <div className="text-gray-300 mb-2">Year 1 Target</div>
-                  <div className="text-white font-bold text-3xl">$5M+</div>
-                  <div className="text-green-400 text-sm mt-1">Conservative</div>
-                </div>
-                <div className="bg-gray-700/50 rounded-xl p-6 hover-lift">
-                  <div className="text-gray-300 mb-2">Year 3 Target</div>
-                  <div className="text-white font-bold text-3xl">$50M+</div>
-                  <div className="text-purple-400 text-sm mt-1">Aggressive</div>
-                </div>
-                <div className="bg-gray-700/50 rounded-xl p-6 hover-lift">
-                  <div className="text-gray-300 mb-2">Break-even</div>
-                  <div className="text-white font-bold text-3xl">Month 8</div>
-                  <div className="text-blue-400 text-sm mt-1">Projected</div>
-                </div>
-                <div className="bg-gray-700/50 rounded-xl p-6 hover-lift">
-                  <div className="text-gray-300 mb-2">Profit Margin</div>
-                  <div className="text-white font-bold text-3xl">65%+</div>
-                  <div className="text-yellow-400 text-sm mt-1">Target</div>
+              
+              <div className="bg-gray-800 rounded-3xl p-10 border border-gray-700 shadow-2xl hover-lift text-center">
+                <h3 className="text-3xl font-bold text-white mb-8">Growth Strategy</h3>
+                <div className="grid grid-cols-2 gap-8">
+                  <div>
+                    <div className="text-5xl font-black text-pink-400 mb-4">40K</div>
+                    <h4 className="text-xl font-bold text-white mb-3">Target Creators</h4>
+                    <p className="text-gray-300">1% of 4M total creators in 3 years</p>
+                  </div>
+                  <div>
+                    <div className="text-5xl font-black text-purple-400 mb-4">200M+</div>
+                    <h4 className="text-xl font-bold text-white mb-3">Fan Base Reach</h4>
+                    <p className="text-gray-300">At platform launch</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-20 text-center fade-in-up">
-          <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl p-12 shadow-2xl">
-            <div className="flex items-center justify-center space-x-4 mb-8">
-              <TrendingUp className="h-12 w-12 text-white" />
-              <div className="text-6xl">💰</div>
-            </div>
-            <h3 className="text-4xl font-bold text-white mb-6">
-              Sustainable & Scalable Revenue Model
-            </h3>
-            <p className="text-green-100 text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
-              Built for long-term growth with multiple revenue streams that scale with our user base. 
-              As the entertainment industry adopts blockchain technology, Fankoin is positioned to capture significant market share.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="bg-white/10 rounded-2xl p-6">
-                <div className="text-3xl font-bold text-white mb-2">$1T+</div>
-                <div className="text-green-200">Entertainment Market</div>
-              </div>
-              <div className="bg-white/10 rounded-2xl p-6">
-                <div className="text-3xl font-bold text-white mb-2">5%</div>
-                <div className="text-green-200">Target Market Share</div>
-              </div>
-              <div className="bg-white/10 rounded-2xl p-6">
-                <div className="text-3xl font-bold text-white mb-2">$50B</div>
-                <div className="text-green-200">Revenue Potential</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

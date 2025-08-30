@@ -231,6 +231,44 @@ export const Team = () => {
         </div>
 
         {/* Team Stats */}
+        {/* Technology Partners */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-white mb-8 text-center">Technology Partners</h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div className="group hover-lift">
+              <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/5 to-purple-500/5 group-hover:from-pink-500/10 group-hover:to-purple-500/10 transition-opacity"></div>
+                
+                <div className="relative z-10 text-center">
+                  <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-4 text-white shadow-lg group-hover:scale-110 transition-transform duration-300 w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <div className="text-xl font-bold">CB</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-pink-300 transition-colors mb-2">
+                    Cyclone Blockchain
+                  </h3>
+                  <p className="text-purple-300 font-medium">Infrastructure Partner</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="group hover-lift">
+              <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/5 to-purple-500/5 group-hover:from-pink-500/10 group-hover:to-purple-500/10 transition-opacity"></div>
+                
+                <div className="relative z-10 text-center">
+                  <div className="bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl p-4 text-white shadow-lg group-hover:scale-110 transition-transform duration-300 w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <div className="text-xl font-bold">LP</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-pink-300 transition-colors mb-2">
+                    LiverPeer
+                  </h3>
+                  <p className="text-purple-300 font-medium">Streaming Partner</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="text-center fade-in-up">
           <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl p-12 shadow-2xl">
             <h3 className="text-4xl font-bold text-white mb-8">Team Excellence</h3>
