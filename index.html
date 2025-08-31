@@ -1,13 +1,612 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fankoin Blockchain Entertainment Platform Website</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fankoin - Blockchain Entertainment Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #ec4899, #8b5cf6, #7c3aed); }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold">F</span>
+                </div>
+                <span class="text-white text-2xl font-bold">Fankoin</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" onclick="showHome()" class="text-white hover:text-pink-300">Home</a>
+                <a href="#features" class="text-white hover:text-pink-300">Features</a>
+                <a href="#team" class="text-white hover:text-pink-300">Team</a>
+                <a href="#tokenomics" class="text-white hover:text-pink-300">Tokenomics</a>
+                <a href="#roadmap" class="text-white hover:text-pink-300">Roadmap</a>
+                <button onclick="showFoundingMember()" class="bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-2 rounded-full font-semibold hover:scale-105 transition-transform">
+                    Become a Founding Member
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page">
+        <!-- Hero Section -->
+        <section class="min-h-screen gradient-bg flex items-center">
+            <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-6xl md:text-8xl font-black text-white">Fankoin</h1>
+                    <p class="text-3xl font-bold text-pink-100">Tokenizing Culture, Fans & Real-World Assets</p>
+                    <p class="text-xl text-purple-100">The first blockchain ecosystem designed specifically for entertainment</p>
+                    <div class="flex gap-4">
+                        <button onclick="showFoundingMember()" class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform">
+                            Become a Founding Member
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-purple-600 transition-all">
+                            White Paper
+                        </button>
+                    </div>
+                </div>
+                <div class="glass rounded-3xl p-8 text-center animate-float">
+                    <div class="text-6xl mb-4">🚀</div>
+                    <p class="text-purple-100">Revolutionary entertainment blockchain ecosystem</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-5xl font-black text-center mb-16">
+                    The Entertainment <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Industry Crisis</span>
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all">
+                        <div class="text-red-400 mb-4">⚠️</div>
+                        <h3 class="text-2xl font-bold mb-4">Fragmented Fan Engagement</h3>
+                        <p class="text-gray-300">Fans scattered across multiple platforms with no unified experience</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all">
+                        <div class="text-red-400 mb-4">💸</div>
+                        <h3 class="text-2xl font-bold mb-4">Revenue Lost to Intermediaries</h3>
+                        <p class="text-gray-300">Creators lose 30-70% of revenue to platform fees and distribution chains</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all">
+                        <div class="text-red-400 mb-4">⚡</div>
+                        <h3 class="text-2xl font-bold mb-4">Complex Tokenization</h3>
+                        <p class="text-gray-300">Current solutions require technical expertise that 99% of creators don't have</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="py-24 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-5xl font-black text-center mb-16">
+                    The <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Fankoin Solution</span>
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all">
+                        <div class="text-green-400 mb-4">✅</div>
+                        <h3 class="text-2xl font-bold mb-4">Unified Fan Experience</h3>
+                        <p class="text-gray-300">One platform for all fan interactions, content, and rewards</p>
+                    </div>
+                    <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all">
+                        <div class="text-green-400 mb-4">💰</div>
+                        <h3 class="text-2xl font-bold mb-4">Direct Creator Revenue</h3>
+                        <p class="text-gray-300">Creators keep 85-95% of revenue through blockchain efficiency</p>
+                    </div>
+                    <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all">
+                        <div class="text-green-400 mb-4">🎯</div>
+                        <h3 class="text-2xl font-bold mb-4">No-Code Tokenization</h3>
+                        <p class="text-gray-300">Simple tools that any creator can use without technical knowledge</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Now Section -->
+        <section class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-5xl font-black text-center mb-16">
+                    Why <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Now?</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Creator Economy Boom</h3>
+                                <p class="text-gray-300">50M+ creators worldwide seeking better monetization</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Blockchain Adoption</h3>
+                                <p class="text-gray-300">Mainstream acceptance of crypto and NFTs in entertainment</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Platform Fatigue</h3>
+                                <p class="text-gray-300">Fans and creators tired of fragmented experiences</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <div class="text-4xl mb-4">📈</div>
+                        <h3 class="text-3xl font-bold mb-4">Perfect Timing</h3>
+                        <p class="text-purple-100">The convergence of technology, market demand, and cultural shift</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosystem Section -->
+        <section id="ecosystem" class="py-24 bg-gray-900 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <div class="absolute top-20 left-20 w-32 h-32 bg-pink-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20 fade-in-up">
+                    <h2 class="text-5xl md:text-7xl font-black text-white mb-8 text-shadow">
+                        Fankoin <span class="gradient-text">Ecosystem</span>
+                    </h2>
+                    <p class="text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
+                        A complete blockchain infrastructure for entertainment
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="group hover-lift h-full">
+                        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 h-full">
+                            <div class="text-pink-300 mb-6">
+                                <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Fan Tokens</h3>
+                            <p class="text-gray-300">Create and trade tokens representing fan engagement and creator support</p>
+                        </div>
+                    </div>
+
+                    <div class="group hover-lift h-full">
+                        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 h-full">
+                            <div class="text-purple-300 mb-6">
+                                <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">NFT Marketplace</h3>
+                            <p class="text-gray-300">Trade exclusive content, tickets, and memorabilia as verified digital assets</p>
+                        </div>
+                    </div>
+
+                    <div class="group hover-lift h-full">
+                        <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 h-full">
+                            <div class="text-pink-300 mb-6">
+                                <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Creator Studios</h3>
+                            <p class="text-gray-300">Professional tools for content creation, fan engagement, and revenue optimization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokenomics Section -->
+        <section id="tokenomics" class="py-24 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-5xl font-black text-center mb-16">
+                    <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Tokenomics</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700">
+                        <h3 class="text-3xl font-bold mb-8 text-center">Token Distribution</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Public Sale</span>
+                                <span class="font-bold text-pink-400">40%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Team & Advisors</span>
+                                <span class="font-bold text-purple-400">20%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Development</span>
+                                <span class="font-bold text-blue-400">15%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Marketing</span>
+                                <span class="font-bold text-green-400">10%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Ecosystem Fund</span>
+                                <span class="font-bold text-yellow-400">10%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Reserve</span>
+                                <span class="font-bold text-gray-400">5%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700">
+                        <h3 class="text-3xl font-bold mb-8 text-center">Token Utility</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-6 h-6 bg-pink-500 rounded-full flex-shrink-0 mt-1"></div>
+                                <div>
+                                    <h4 class="font-bold text-white">Governance</h4>
+                                    <p class="text-gray-300 text-sm">Vote on platform decisions and upgrades</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-6 h-6 bg-purple-500 rounded-full flex-shrink-0 mt-1"></div>
+                                <div>
+                                    <h4 class="font-bold text-white">Staking Rewards</h4>
+                                    <p class="text-gray-300 text-sm">Earn yield from platform revenue</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-6 h-6 bg-blue-500 rounded-full flex-shrink-0 mt-1"></div>
+                                <div>
+                                    <h4 class="font-bold text-white">Platform Access</h4>
+                                    <p class="text-gray-300 text-sm">Premium features and exclusive content</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex-shrink-0 mt-1"></div>
+                                <div>
+                                    <h4 class="font-bold text-white">Transaction Fees</h4>
+                                    <p class="text-gray-300 text-sm">Reduced fees for token holders</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-5xl font-black text-center mb-16">
+                    Meet the <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Team</span>
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">AK</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Alex Kim</h3>
+                        <p class="text-pink-400 mb-4">CEO & Founder</p>
+                        <p class="text-gray-300">Former blockchain architect at Meta, 10+ years in entertainment tech</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">SM</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Sarah Martinez</h3>
+                        <p class="text-purple-400 mb-4">CTO</p>
+                        <p class="text-gray-300">Ex-Coinbase senior engineer, blockchain security expert</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all text-center">
+                        <div class="w-24 h-24 bg-gradient-to-r from-blue-500 to-green-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold">MJ</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Mike Johnson</h3>
+                        <p class="text-blue-400 mb-4">Head of Partnerships</p>
+                        <p class="text-gray-300">Former Warner Music Group, deep entertainment industry connections</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="py-24 gradient-bg">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-5xl font-black text-center mb-16">Fankoin <span class="text-pink-200">Roadmap</span></h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <div class="text-3xl font-black mb-2">2025 Q3</div>
+                        <h3 class="text-xl font-bold mb-4">Prototype Development</h3>
+                        <p class="text-purple-200">Core platform development and initial partnerships</p>
+                    </div>
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <div class="text-3xl font-black mb-2">2025 Q4</div>
+                        <h3 class="text-xl font-bold mb-4">Alpha Launch</h3>
+                        <p class="text-purple-200">Beta testing with limited creators</p>
+                    </div>
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <div class="text-3xl font-black mb-2">2026 Q1</div>
+                        <h3 class="text-xl font-bold mb-4">Full Launch</h3>
+                        <p class="text-purple-200">Public platform launch with 150+ creators</p>
+                    </div>
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <div class="text-3xl font-black mb-2">2026 Q2+</div>
+                        <h3 class="text-xl font-bold mb-4">Global Expansion</h3>
+                        <p class="text-purple-200">Platform scaling and market penetration</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 border-t border-gray-800 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                        <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">F</span>
+                        </div>
+                        <span class="text-white text-xl font-bold">Fankoin</span>
+                    </div>
+                    <div class="text-gray-400 text-center">
+                        <p>&copy; 2025 Fankoin. Revolutionizing entertainment through blockchain.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Founding Member Page -->
+    <div id="founding-member-page" class="hidden">
+        <section class="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-purple-700 pt-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="text-center mb-16">
+                    <button onclick="showHome()" class="mb-8 text-white/80 hover:text-white flex items-center space-x-2 mx-auto">
+                        <span>←</span> <span>Back to Home</span>
+                    </button>
+                    <h1 class="text-6xl font-black text-white mb-8">Become a Founding Member</h1>
+                    <p class="text-2xl text-purple-100 max-w-4xl mx-auto">Join the revolution transforming entertainment through blockchain technology</p>
+                </div>
+
+                <!-- Market Backdrop -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="glass-effect rounded-3xl p-8 text-center border border-white/20">
+                        <h3 class="text-3xl font-bold mb-4 text-white">Creator Economy</h3>
+                        <div class="text-6xl font-black text-pink-300 mb-2">$1.3T</div>
+                        <p class="text-purple-200">Projected by 2030</p>
+                        <p class="text-sm text-purple-300 mt-4">Content creators, streamers, influencers, sports communities, artists, and fan engagement platforms</p>
+                    </div>
+                    <div class="glass-effect rounded-3xl p-8 text-center border border-white/20">
+                        <h3 class="text-3xl font-bold mb-4 text-white">Entertainment Industry</h3>
+                        <div class="text-6xl font-black text-purple-300 mb-2">$2.4T</div>
+                        <p class="text-purple-200">Global market today</p>
+                        <p class="text-sm text-purple-300 mt-4">Film, music, sports, gaming, live events, streaming platforms</p>
+                    </div>
+                </div>
+
+                <!-- Investment Returns -->
+                <div class="glass-effect rounded-3xl p-8 mb-16 border border-white/20">
+                    <h3 class="text-3xl font-bold text-center mb-8 text-white">Investment Returns Analysis</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <h4 class="text-2xl font-bold text-pink-300 mb-4">$100 Investment</h4>
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span class="text-purple-200">Growth by 2029:</span>
+                                    <span class="font-bold text-green-400">$100,780</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-purple-200">Yield by 2029:</span>
+                                    <span class="font-bold text-green-400">$5,291</span>
+                                </div>
+                                <div class="flex justify-between border-t border-white/20 pt-4">
+                                    <span class="font-bold text-white">Total Return:</span>
+                                    <span class="font-bold text-pink-300 text-xl">$106,071</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-2xl font-bold text-purple-300 mb-4">$999 Investment</h4>
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span class="text-purple-200">Growth by 2029:</span>
+                                    <span class="font-bold text-green-400">$87,831</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-purple-200">Yield by 2029:</span>
+                                    <span class="font-bold text-green-400">$5,291</span>
+                                </div>
+                                <div class="flex justify-between border-t border-white/20 pt-4">
+                                    <span class="font-bold text-white">Total Return:</span>
+                                    <span class="font-bold text-pink-300 text-xl">$93,122</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Token Value Progression -->
+                <div class="glass-effect rounded-3xl p-8 mb-16 border border-white/20">
+                    <h3 class="text-3xl font-bold text-center mb-8 text-white">FanKoin Token Value Progression</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-pink-300 mb-2">$102</div>
+                            <p class="text-purple-200">2026</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-purple-300 mb-2">$536</div>
+                            <p class="text-purple-200">2027</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-pink-300 mb-2">$1,008</div>
+                            <p class="text-purple-200">2028</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creator Market Analysis -->
+                <div class="glass-effect rounded-3xl p-8 mb-16 border border-white/20">
+                    <h3 class="text-3xl font-bold text-center mb-8 text-white">Creator Market Analysis</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="border-b border-white/20">
+                                    <th class="py-3 px-4 font-bold text-white">Creator Type</th>
+                                    <th class="py-3 px-4 font-bold text-white">2026</th>
+                                    <th class="py-3 px-4 font-bold text-white">2027</th>
+                                    <th class="py-3 px-4 font-bold text-white">2028</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-purple-200">
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Mega-Celebrities</td>
+                                    <td class="py-3 px-4">100</td>
+                                    <td class="py-3 px-4">500</td>
+                                    <td class="py-3 px-4">1,000</td>
+                                </tr>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Macro-Influencers</td>
+                                    <td class="py-3 px-4">400</td>
+                                    <td class="py-3 px-4">5,000</td>
+                                    <td class="py-3 px-4">13,000</td>
+                                </tr>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Mid-Tier Creators</td>
+                                    <td class="py-3 px-4">1,000</td>
+                                    <td class="py-3 px-4">5,000</td>
+                                    <td class="py-3 px-4">20,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-semibold">Emerging Creators</td>
+                                    <td class="py-3 px-4">3,000</td>
+                                    <td class="py-3 px-4">6,000</td>
+                                    <td class="py-3 px-4">25,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Market Cap Projections -->
+                <div class="glass-effect rounded-3xl p-8 mb-16 border border-white/20">
+                    <h3 class="text-3xl font-bold text-center mb-8 text-white">Market Capitalization Projections</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="border-b border-white/20">
+                                    <th class="py-3 px-4 font-bold text-white">Creator Type</th>
+                                    <th class="py-3 px-4 font-bold text-white">2026</th>
+                                    <th class="py-3 px-4 font-bold text-white">2027</th>
+                                    <th class="py-3 px-4 font-bold text-white">2028</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-purple-200">
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Mega-Celebrities</td>
+                                    <td class="py-3 px-4">$5B</td>
+                                    <td class="py-3 px-4">$25B</td>
+                                    <td class="py-3 px-4">$50B</td>
+                                </tr>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Macro-Influencers</td>
+                                    <td class="py-3 px-4">$4B</td>
+                                    <td class="py-3 px-4">$50B</td>
+                                    <td class="py-3 px-4">$130B</td>
+                                </tr>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Mid-Tier Creators</td>
+                                    <td class="py-3 px-4">$1B</td>
+                                    <td class="py-3 px-4">$5B</td>
+                                    <td class="py-3 px-4">$20B</td>
+                                </tr>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Emerging Creators</td>
+                                    <td class="py-3 px-4">$187.5M</td>
+                                    <td class="py-3 px-4">$375M</td>
+                                    <td class="py-3 px-4">$1.56B</td>
+                                </tr>
+                                <tr class="bg-pink-500/20">
+                                    <td class="py-3 px-4 font-bold text-white">Total Market Cap</td>
+                                    <td class="py-3 px-4 font-bold text-white">$10.19B</td>
+                                    <td class="py-3 px-4 font-bold text-white">$80.38B</td>
+                                    <td class="py-3 px-4 font-bold text-white">$201.56B</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- FanKoin vs pump.fun -->
+                <div class="glass-effect rounded-3xl p-8 mb-16 border border-white/20">
+                    <h3 class="text-3xl font-bold text-center mb-8 text-white">FanKoin vs pump.fun Opportunity</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <h4 class="text-2xl font-bold text-pink-300 mb-4">pump.fun</h4>
+                            <div class="space-y-2 text-purple-200">
+                                <p>$4B FDV (memecoin focus)</p>
+                                <p>$800M fees in Year 1</p>
+                                <p>1T token supply</p>
+                                <p>No direct yield to holders</p>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-2xl font-bold text-purple-300 mb-4">FanKoin</h4>
+                            <div class="space-y-2 text-purple-200">
+                                <p>$200B+ potential (entertainment focus)</p>
+                                <p>$42.3B projected revenues</p>
+                                <p>200M token supply</p>
+                                <p>25% direct yield to holders</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center">
+                    <button class="bg-white text-purple-600 px-12 py-6 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-2xl">
+                        Invest Now - Secure Your Position
+                    </button>
+                    <p class="text-purple-200 mt-4">Limited founding member positions available</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showHome() {
+            document.getElementById('home-page').classList.remove('hidden');
+            document.getElementById('founding-member-page').classList.add('hidden');
+        }
+
+        function showFoundingMember() {
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('founding-member-page').classList.remove('hidden');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
