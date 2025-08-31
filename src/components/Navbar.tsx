@@ -41,9 +41,11 @@ export const Navbar = () => {
                 </button>
               </div>
             </div>
-            <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              Connect Wallet
-            </button>
+            <Link to="/founding-member">
+              <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                Become a Founding Member
+              </button>
+            </Link>
           </div>
 
           <div className="lg:hidden">
@@ -63,9 +65,11 @@ export const Navbar = () => {
             <a href="#features" className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors">Features</a>
             <a href="#roadmap" className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors">Roadmap</a>
             <a href="#ecosystem" className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors">Ecosystem</a>
-            <button className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold mt-4">
-              Connect Wallet
-            </button>
+            <Link to="/founding-member" className="block mt-4">
+              <button className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold">
+                Become a Founding Member
+              </button>
+            </Link>
           </div>
         </div>
       )}

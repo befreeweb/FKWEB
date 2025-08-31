@@ -136,28 +136,6 @@ export const TokenFlow = () => {
           </div>
         </div>
 
-        {/* Stats section */}
-        <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl p-12 text-center shadow-2xl fade-in-up">
-          <h3 className="text-3xl font-bold text-white mb-8">Ecosystem Performance</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-4xl font-black text-white mb-2">$50M+</div>
-              <div className="text-pink-100">Total Volume</div>
-            </div>
-            <div>
-              <div className="text-4xl font-black text-white mb-2">500K+</div>
-              <div className="text-pink-100">Transactions</div>
-            </div>
-            <div>
-              <div className="text-4xl font-black text-white mb-2">1,200+</div>
-              <div className="text-pink-100">Fan Tokens</div>
-            </div>
-            <div>
-              <div className="text-4xl font-black text-white mb-2">99.9%</div>
-              <div className="text-pink-100">Uptime</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

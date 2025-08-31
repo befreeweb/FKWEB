@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown, Play, Users, Zap, ArrowRight, Sparkles } from 'lucide-react';
 
 export const Hero = () => {
@@ -42,10 +43,12 @@ export const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6">
-              <button className="group bg-white text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 flex items-center justify-center space-x-3">
-                <span>Join the Ecosystem</span>
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <Link to="/founding-member">
+                <button className="group bg-white text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 flex items-center justify-center space-x-3">
+                  <span>Become a Founding Member</span>
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
               <button className="group border-2 border-white text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
                 <Play className="h-5 w-5" />
                 <a href="https://fankoin-white-paper-q7ux.bolt.host" target="_blank" rel="noopener noreferrer">White Paper</a>
