@@ -5,354 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fankoin - Blockchain Entertainment Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * { font-family: 'Inter', sans-serif; }
-        .gradient-text { background: linear-gradient(135deg, #ff0080 0%, #7928ca 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-effect { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); }
-        .floating-animation { animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-        .pulse-glow { animation: pulse-glow 2s ease-in-out infinite alternate; }
-        @keyframes pulse-glow { from { box-shadow: 0 0 20px rgba(255, 0, 128, 0.3); } to { box-shadow: 0 0 40px rgba(121, 40, 202, 0.6); } }
-        .hover-lift { transition: all 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
-        .fade-in-up { animation: fadeInUp 0.8s ease-out; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .slide-in-left { animation: slideInLeft 0.8s ease-out; }
-        @keyframes slideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
-        .slide-in-right { animation: slideInRight 0.8s ease-out; }
-        @keyframes slideInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
-        .text-shadow { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
-        .bg-mesh { background-image: radial-gradient(circle at 25% 25%, rgba(255, 0, 128, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(121, 40, 202, 0.1) 0%, transparent 50%); }
-        #founding-member { display: none; }
+        .gradient-bg { background: linear-gradient(135deg, #ec4899, #8b5cf6, #7c3aed); }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .hidden { display: none; }
     </style>
 </head>
-<body>
+<body class="bg-gray-900 text-white">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-transparent transition-all duration-500" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-3">
-                    <div class="relative">
-                        <svg class="h-10 w-10 text-white pulse-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                        </svg>
-                        <div class="absolute inset-0 h-10 w-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full blur-lg opacity-30"></div>
-                    </div>
-                    <span class="text-white text-2xl font-bold">Fankoin</span>
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold">F</span>
                 </div>
-                
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="#" onclick="showHome()" class="text-white/90 hover:text-white transition-all duration-300 font-medium">Home</a>
-                    <a href="#features" class="text-white/90 hover:text-white transition-all duration-300 font-medium">Features</a>
-                    <a href="#roadmap" class="text-white/90 hover:text-white transition-all duration-300 font-medium">Roadmap</a>
-                    <a href="#team" class="text-white/90 hover:text-white transition-all duration-300 font-medium">Team</a>
-                    <button onclick="showFoundingMember()" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Become a Founding Member
-                    </button>
-                </div>
-
-                <div class="lg:hidden">
-                    <button onclick="toggleMobileMenu()" class="text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+                <span class="text-white text-2xl font-bold">Fankoin</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" onclick="showHome()" class="text-white hover:text-pink-300">Home</a>
+                <a href="#features" class="text-white hover:text-pink-300">Features</a>
+                <a href="#roadmap" class="text-white hover:text-pink-300">Roadmap</a>
+                <button onclick="showFoundingMember()" class="bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-2 rounded-full font-semibold hover:scale-105 transition-transform">
+                    Become a Founding Member
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Home Page Content -->
-    <div id="home-content">
+    <!-- Home Page -->
+    <div id="home-page">
         <!-- Hero Section -->
-        <section class="relative min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-purple-700 overflow-hidden">
-            <div class="absolute inset-0 bg-mesh">
-                <div class="absolute top-20 left-10 w-4 h-4 bg-white rounded-full animate-pulse opacity-60"></div>
-                <div class="absolute top-40 right-20 w-2 h-2 bg-pink-200 rounded-full animate-pulse opacity-80"></div>
-                <div class="absolute bottom-32 left-1/4 w-6 h-6 bg-purple-200 rounded-full animate-pulse opacity-50"></div>
-                <div class="absolute top-1/3 right-1/3 w-3 h-3 bg-white rounded-full animate-pulse opacity-70"></div>
-                <div class="absolute bottom-20 right-10 w-4 h-4 bg-pink-300 rounded-full animate-pulse opacity-60"></div>
-                
-                <div class="absolute top-1/4 left-1/4 w-20 h-20 border border-white/20 rounded-full floating-animation"></div>
-                <div class="absolute bottom-1/4 right-1/4 w-16 h-16 border border-pink-300/30 rounded-lg floating-animation"></div>
-            </div>
-
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="space-y-10 slide-in-left">
-                        <div class="space-y-8">
-                            <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
-                                <svg class="h-5 w-5 text-pink-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                                </svg>
-                                <span class="text-white font-medium">Entertainment on the Blockchain</span>
-                            </div>
-                            
-                            <h1 class="text-6xl md:text-8xl font-black text-white leading-tight text-shadow">
-                                Fankoin
-                            </h1>
-                            
-                            <div class="space-y-4">
-                                <p class="text-3xl md:text-4xl font-bold gradient-text">
-                                    Tokenizing Culture, Fans & Real-World Assets
-                                </p>
-                                <p class="text-xl text-purple-100 font-medium leading-relaxed max-w-2xl">
-                                    The first blockchain ecosystem designed specifically for entertainment, 
-                                    connecting millions of fans with their favorite creators and studios.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row gap-6">
-                            <button onclick="showFoundingMember()" class="group bg-white text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-3">
-                                <span>Become a Founding Member</span>
-                                <svg class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </button>
-                            <a href="https://fankoin-white-paper-q7ux.bolt.host" target="_blank" class="group border-2 border-white text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
-                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
-                                <span>White Paper</span>
-                            </a>
-                        </div>
-
-                        <div class="flex items-center space-x-12 pt-8">
-                            <div class="flex items-center space-x-3 text-white">
-                                <div class="p-3 bg-white/10 rounded-full backdrop-blur-sm">
-                                    <svg class="h-6 w-6 text-pink-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-2xl">1M+</div>
-                                    <div class="text-purple-200 text-sm">Active Fans</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-3 text-white">
-                                <div class="p-3 bg-white/10 rounded-full backdrop-blur-sm">
-                                    <svg class="h-6 w-6 text-purple-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-2xl">50K+</div>
-                                    <div class="text-purple-200 text-sm">Creators</div>
-                                </div>
-                            </div>
-                        </div>
+        <section class="min-h-screen gradient-bg flex items-center">
+            <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-6xl md:text-8xl font-black text-white">Fankoin</h1>
+                    <p class="text-3xl font-bold text-pink-100">Tokenizing Culture, Fans & Real-World Assets</p>
+                    <p class="text-xl text-purple-100">The first blockchain ecosystem designed specifically for entertainment</p>
+                    <div class="flex gap-4">
+                        <button onclick="showFoundingMember()" class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform">
+                            Become a Founding Member
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-purple-600 transition-all">
+                            White Paper
+                        </button>
                     </div>
-
-                    <div class="relative slide-in-right">
-                        <div class="relative z-10 glass-effect rounded-3xl p-10 shadow-2xl border border-white/20 hover-lift">
-                            <div class="text-center space-y-6">
-                                <h3 class="text-2xl font-bold text-white">Platform Preview</h3>
-                                <div class="bg-white/10 rounded-2xl p-8 border border-white/20">
-                                    <div class="text-6xl mb-4">🚀</div>
-                                    <p class="text-purple-100">Revolutionary entertainment blockchain ecosystem launching soon</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="glass rounded-3xl p-8 text-center animate-float">
+                    <div class="text-6xl mb-4">🚀</div>
+                    <p class="text-purple-100">Revolutionary entertainment blockchain ecosystem</p>
                 </div>
             </div>
         </section>
 
-        <!-- Problem Section -->
-        <section id="features" class="py-24 bg-gray-900 relative overflow-hidden">
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20">
-                    <h2 class="text-5xl md:text-7xl font-black text-white mb-8 text-shadow">
-                        The Entertainment <span class="gradient-text">Industry Crisis</span>
-                    </h2>
-                    <p class="text-2xl text-gray-300 max-w-4xl mx-auto">
-                        Critical challenges preventing creators and fans from reaching their full potential
-                    </p>
-                </div>
-
+        <!-- Features Section -->
+        <section id="features" class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-5xl font-black text-center mb-16">
+                    The Entertainment <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Industry Crisis</span>
+                </h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover-lift">
-                        <h3 class="text-2xl font-bold text-white mb-4">Fragmented Fan Engagement</h3>
+                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all">
+                        <div class="text-red-400 mb-4">⚠️</div>
+                        <h3 class="text-2xl font-bold mb-4">Fragmented Fan Engagement</h3>
                         <p class="text-gray-300">Fans scattered across multiple platforms with no unified experience</p>
                     </div>
-                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover-lift">
-                        <h3 class="text-2xl font-bold text-white mb-4">Revenue Lost to Intermediaries</h3>
+                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all">
+                        <div class="text-red-400 mb-4">💸</div>
+                        <h3 class="text-2xl font-bold mb-4">Revenue Lost to Intermediaries</h3>
                         <p class="text-gray-300">Creators lose 30-70% of revenue to platform fees and distribution chains</p>
                     </div>
-                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover-lift">
-                        <h3 class="text-2xl font-bold text-white mb-4">Complex Tokenization</h3>
-                        <p class="text-gray-300">Current solutions require technical expertise 99% of creators don't have</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Solution Section -->
-        <section class="py-24 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800 relative overflow-hidden">
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20">
-                    <h2 class="text-5xl md:text-7xl font-black text-white mb-8 text-shadow">
-                        The Fankoin <span class="gradient-text">Revolution</span>
-                    </h2>
-                    <p class="text-2xl text-purple-100 max-w-4xl mx-auto">
-                        A comprehensive blockchain ecosystem designed specifically for entertainment
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover-lift">
-                        <h3 class="text-2xl font-bold text-white mb-4">Fan Token Launchpad</h3>
-                        <p class="text-gray-300 mb-4">1-click token creation with zero technical knowledge required</p>
-                        <div class="bg-green-500/20 rounded-full px-4 py-2 border border-green-400/30 inline-block">
-                            <span class="text-green-300 font-semibold text-sm">95% faster deployment</span>
-                        </div>
-                    </div>
-                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover-lift">
-                        <h3 class="text-2xl font-bold text-white mb-4">NFT & RWA Infrastructure</h3>
-                        <p class="text-gray-300 mb-4">Tokenize tickets, royalties, and IP rights with enterprise security</p>
-                        <div class="bg-green-500/20 rounded-full px-4 py-2 border border-green-400/30 inline-block">
-                            <span class="text-green-300 font-semibold text-sm">Bank-level security</span>
-                        </div>
-                    </div>
-                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover-lift">
-                        <h3 class="text-2xl font-bold text-white mb-4">Direct Monetization</h3>
-                        <p class="text-gray-300 mb-4">Cut out middlemen and maximize creator revenue streams</p>
-                        <div class="bg-green-500/20 rounded-full px-4 py-2 border border-green-400/30 inline-block">
-                            <span class="text-green-300 font-semibold text-sm">70% more revenue</span>
-                        </div>
+                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all">
+                        <div class="text-red-400 mb-4">⚡</div>
+                        <h3 class="text-2xl font-bold mb-4">Complex Tokenization</h3>
+                        <p class="text-gray-300">Current solutions require technical expertise that 99% of creators don't have</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Roadmap Section -->
-        <section id="roadmap" class="py-24 bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 relative overflow-hidden">
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20">
-                    <h2 class="text-5xl md:text-7xl font-black text-white mb-8 text-shadow">
-                        Fankoin <span class="gradient-text">Roadmap</span>
-                    </h2>
-                </div>
-
+        <section id="roadmap" class="py-24 gradient-bg">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-5xl font-black text-center mb-16">Fankoin <span class="text-pink-200">Roadmap</span></h2>
                 <div class="grid md:grid-cols-4 gap-8">
-                    <div class="glass-effect rounded-3xl p-8 border border-white/20 hover-lift text-center">
-                        <div class="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-6 text-white shadow-lg">
-                            <span class="font-bold">Q3</span>
-                        </div>
-                        <div class="text-3xl font-black text-white mb-2">2025</div>
-                        <h3 class="text-xl font-bold text-white mb-4">Prototype</h3>
-                        <p class="text-purple-200">Core development and creator partnerships</p>
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <div class="text-3xl font-black mb-2">2025 Q3</div>
+                        <h3 class="text-xl font-bold mb-4">Prototype Development</h3>
+                        <p class="text-purple-200">Core platform development and initial partnerships</p>
                     </div>
-                    <div class="glass-effect rounded-3xl p-8 border border-white/20 hover-lift text-center">
-                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-6 text-white shadow-lg">
-                            <span class="font-bold">Q4</span>
-                        </div>
-                        <div class="text-3xl font-black text-white mb-2">2025</div>
-                        <h3 class="text-xl font-bold text-white mb-4">Alpha Launch</h3>
-                        <p class="text-purple-200">Beta testing and community feedback</p>
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <div class="text-3xl font-black mb-2">2025 Q4</div>
+                        <h3 class="text-xl font-bold mb-4">Alpha Launch</h3>
+                        <p class="text-purple-200">Beta testing with limited creators</p>
                     </div>
-                    <div class="glass-effect rounded-3xl p-8 border border-white/20 hover-lift text-center">
-                        <div class="bg-gradient-to-r from-pink-600 to-purple-700 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-6 text-white shadow-lg">
-                            <span class="font-bold">Q1</span>
-                        </div>
-                        <div class="text-3xl font-black text-white mb-2">2026</div>
-                        <h3 class="text-xl font-bold text-white mb-4">Full Launch</h3>
-                        <p class="text-purple-200">Public launch with 150+ creators</p>
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <div class="text-3xl font-black mb-2">2026 Q1</div>
+                        <h3 class="text-xl font-bold mb-4">Full Launch</h3>
+                        <p class="text-purple-200">Public platform launch with 150+ creators</p>
                     </div>
-                    <div class="glass-effect rounded-3xl p-8 border border-white/20 hover-lift text-center">
-                        <div class="bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-6 text-white shadow-lg">
-                            <span class="font-bold">Q2+</span>
-                        </div>
-                        <div class="text-3xl font-black text-white mb-2">2026</div>
-                        <h3 class="text-xl font-bold text-white mb-4">Expansion</h3>
-                        <p class="text-purple-200">Global scaling and DAO governance</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team Section -->
-        <section id="team" class="py-24 bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 relative overflow-hidden">
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20">
-                    <h2 class="text-5xl md:text-7xl font-black text-white mb-8 text-shadow">
-                        World-Class <span class="gradient-text">Team</span>
-                    </h2>
-                    <p class="text-2xl text-purple-100 max-w-4xl mx-auto">
-                        Expertise from blockchain, entertainment, and business
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover-lift">
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-3 text-white shadow-lg">
-                                <div class="text-2xl font-bold">BOC</div>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Businessofcinema.com</h3>
-                                <p class="text-purple-300">Digital innovation leader since 2005</p>
-                            </div>
-                        </div>
-                        <div class="bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
-                            <p class="text-purple-300 font-semibold text-sm">Collaboration with Ethereum founding team</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover-lift">
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-3 text-white shadow-lg">
-                                <div class="text-2xl font-bold">ETH</div>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Taylor Gerring</h3>
-                                <p class="text-purple-300">Angel Investor & Co-founder</p>
-                            </div>
-                        </div>
-                        <div class="bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
-                            <p class="text-purple-300 font-semibold text-sm">Ethereum.org</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-24 bg-gradient-to-br from-pink-500 via-purple-500 to-purple-700 relative overflow-hidden">
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="space-y-12">
-                    <h2 class="text-6xl md:text-8xl font-black text-white leading-tight text-shadow">
-                        Join the Future of <span class="gradient-text">Entertainment</span>
-                    </h2>
-                    
-                    <p class="text-3xl text-purple-100 font-bold max-w-4xl mx-auto">
-                        Fankoin = Entertainment × Blockchain × Community
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
-                        <button onclick="showFoundingMember()" class="group bg-white text-purple-600 px-12 py-6 rounded-full font-bold text-xl hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center space-x-3">
-                            <span>Get Started Now</span>
-                            <svg class="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-20">
-                        <div class="glass-effect rounded-3xl p-8 border border-white/20 hover-lift">
-                            <div class="text-4xl font-black text-white mb-3">1M+</div>
-                            <div class="text-purple-200 text-lg">Fans Ready to Join</div>
-                        </div>
-                        <div class="glass-effect rounded-3xl p-8 border border-white/20 hover-lift">
-                            <div class="text-4xl font-black text-white mb-3">$50M+</div>
-                            <div class="text-purple-200 text-lg">In Creator Value</div>
-                        </div>
-                        <div class="glass-effect rounded-3xl p-8 border border-white/20 hover-lift">
-                            <div class="text-4xl font-black text-white mb-3">24/7</div>
-                            <div class="text-purple-200 text-lg">Global Access</div>
-                        </div>
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <div class="text-3xl font-black mb-2">2026 Q2+</div>
+                        <h3 class="text-xl font-bold mb-4">Global Expansion</h3>
+                        <p class="text-purple-200">Platform scaling and market penetration</p>
                     </div>
                 </div>
             </div>
@@ -360,533 +116,240 @@
     </div>
 
     <!-- Founding Member Page -->
-    <div id="founding-member" class="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-purple-700 relative overflow-hidden">
-        <div class="absolute inset-0">
-            <div class="absolute top-10 left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl floating-animation"></div>
-            <div class="absolute bottom-10 right-10 w-48 h-48 bg-pink-300/20 rounded-full blur-3xl floating-animation"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-300/10 rounded-full blur-3xl floating-animation"></div>
-        </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-            
-            <!-- Header -->
-            <div class="text-center mb-20 fade-in-up">
-                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-8 py-4 border border-white/20 mb-8">
-                    <svg class="h-6 w-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                    </svg>
-                    <span class="text-white font-semibold text-lg">Exclusive Investment Opportunity</span>
+    <div id="founding-member-page" class="hidden">
+        <!-- Hero Section -->
+        <section class="min-h-screen gradient-bg pt-24">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="text-center mb-16">
+                    <button onclick="showHome()" class="mb-8 text-white/80 hover:text-white flex items-center space-x-2">
+                        <span>←</span> <span>Back to Home</span>
+                    </button>
+                    <h1 class="text-6xl font-black text-white mb-8">Become a Founding Member</h1>
+                    <p class="text-2xl text-purple-100 max-w-4xl mx-auto">Join the revolution transforming entertainment through blockchain technology</p>
                 </div>
-                
-                <h1 class="text-6xl md:text-8xl font-black text-white leading-tight text-shadow mb-8">
-                    Founding Member <span class="gradient-text">Investment</span>
-                </h1>
-                
-                <p class="text-2xl text-purple-100 font-bold max-w-4xl mx-auto mb-8">
-                    Join the entertainment revolution with exclusive founding member benefits
-                </p>
 
-                <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 inline-block">
-                    <div class="text-6xl font-black text-white mb-4">$999</div>
-                    <div class="text-purple-200 text-xl">Founding Member Token Price</div>
-                </div>
-            </div>
-
-            <!-- Market Backdrop -->
-            <div class="mb-20">
-                <h2 class="text-4xl font-bold text-white text-center mb-12">📊 Market Backdrop</h2>
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <div class="glass-effect rounded-3xl p-10 border border-white/20 hover-lift text-center">
-                        <div class="bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                            <svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-3xl font-bold text-white mb-2">Creator Economy</h3>
-                        <div class="text-5xl font-black text-white mb-2">$1.3T</div>
-                        <div class="text-purple-200 text-xl mb-4">by 2030</div>
-                        <p class="text-purple-100">Content creators, streamers, influencers, sports communities, artists, and fan engagement platforms</p>
+                <!-- Market Backdrop -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <h3 class="text-3xl font-bold mb-4">Creator Economy</h3>
+                        <div class="text-6xl font-black text-pink-300 mb-2">$1.3T</div>
+                        <p class="text-purple-200">Projected by 2030</p>
+                        <p class="text-sm text-purple-300 mt-4">Content creators, streamers, influencers, sports communities, artists, and fan engagement platforms</p>
                     </div>
-                    <div class="glass-effect rounded-3xl p-10 border border-white/20 hover-lift text-center">
-                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                            <svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-3xl font-bold text-white mb-2">Entertainment Industry</h3>
-                        <div class="text-5xl font-black text-white mb-2">$2.4T</div>
-                        <div class="text-purple-200 text-xl mb-4">today</div>
-                        <p class="text-purple-100">Film, music, sports, gaming, live events, streaming - early adopter of tech shifts</p>
+                    <div class="glass rounded-3xl p-8 text-center">
+                        <h3 class="text-3xl font-bold mb-4">Entertainment Industry</h3>
+                        <div class="text-6xl font-black text-purple-300 mb-2">$2.4T</div>
+                        <p class="text-purple-200">Global market today</p>
+                        <p class="text-sm text-purple-300 mt-4">Film, music, sports, gaming, live events, streaming platforms</p>
                     </div>
                 </div>
-                
-                <div class="text-center">
-                    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-6 inline-block shadow-2xl">
-                        <p class="text-white font-bold text-xl">
-                            🎯 FanKoin = The only blockchain positioned at the intersection
-                        </p>
-                    </div>
-                </div>
-            </div>
 
-            <!-- FanKoin vs pump.fun -->
-            <div class="mb-20">
-                <h2 class="text-4xl font-bold text-white text-center mb-12">🔑 Investor Framing</h2>
-                <div class="glass-effect rounded-3xl p-10 border border-white/20 mb-8">
-                    <div class="text-center mb-8">
-                        <p class="text-2xl text-white font-bold mb-4">
-                            pump.fun scaled to $4B FDV by capturing memecoin flows
-                        </p>
-                        <p class="text-xl text-purple-200">
-                            FanKoin targets two giant markets with utility-driven tokens
-                        </p>
-                    </div>
-                    
-                    <div class="overflow-x-auto">
-                        <table class="w-full">
-                            <thead>
-                                <tr class="border-b border-white/20">
-                                    <th class="text-left py-4 px-6 text-pink-200 font-bold text-lg">Metric</th>
-                                    <th class="text-center py-4 px-6 text-pink-200 font-bold text-lg">🚀 FanKoin</th>
-                                    <th class="text-center py-4 px-6 text-purple-200 font-bold text-lg">pump.fun</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Total Supply</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">200M tokens</td>
-                                    <td class="py-4 px-6 text-center text-gray-400">1T tokens</td>
-                                </tr>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">FDV Target</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$200B+ by 2029</td>
-                                    <td class="py-4 px-6 text-center text-gray-400">$4B achieved</td>
-                                </tr>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Revenue Model</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">Direct yield to holders</td>
-                                    <td class="py-4 px-6 text-center text-gray-400">Buybacks only</td>
-                                </tr>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Market Focus</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">Entertainment + Creator Economy</td>
-                                    <td class="py-4 px-6 text-center text-gray-400">Memecoins only</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Revenue Projections -->
-            <div class="mb-20">
-                <h2 class="text-4xl font-bold text-white text-center mb-12">💰 Revenue Projections</h2>
-                <div class="glass-effect rounded-3xl p-10 border border-white/20 mb-8">
-                    <div class="text-center mb-8">
-                        <h3 class="text-3xl font-bold text-white mb-4">FanKoin Token Value Progression</h3>
-                        <p class="text-xl text-purple-200">Based on Excel data projections</p>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-3 gap-8 mb-8">
-                        <div class="text-center bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-2xl p-8 border border-purple-400/30">
-                            <div class="text-5xl font-black text-pink-300 mb-4">$102</div>
-                            <div class="text-white text-xl font-bold mb-2">2026</div>
-                            <div class="text-purple-200">Token Launch Value</div>
-                        </div>
-                        <div class="text-center bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl p-8 border border-pink-400/30">
-                            <div class="text-5xl font-black text-purple-300 mb-4">$536</div>
-                            <div class="text-white text-xl font-bold mb-2">2027</div>
-                            <div class="text-purple-200">Growth Phase</div>
-                        </div>
-                        <div class="text-center bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-2xl p-8 border border-purple-400/30">
-                            <div class="text-5xl font-black text-yellow-300 mb-4">$1,008</div>
-                            <div class="text-white text-xl font-bold mb-2">2028</div>
-                            <div class="text-purple-200">Maturity Phase</div>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl p-6 inline-block">
-                            <p class="text-white font-bold text-2xl">🚀 988% Token Appreciation in 3 Years</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Creator Market Analysis -->
-            <div class="mb-20">
-                <h2 class="text-4xl font-bold text-white text-center mb-12">🎭 Creator Market Analysis</h2>
-                <div class="glass-effect rounded-3xl p-10 border border-white/20">
-                    <div class="grid md:grid-cols-3 gap-8 mb-8">
-                        <div class="text-center bg-purple-500/20 rounded-2xl p-6 border border-purple-400/30">
-                            <div class="text-3xl font-black text-white mb-2">200M</div>
-                            <div class="text-purple-200">Total Creator Market Worldwide</div>
-                        </div>
-                        <div class="text-center bg-pink-500/20 rounded-2xl p-6 border border-pink-400/30">
-                            <div class="text-3xl font-black text-white mb-2">4M</div>
-                            <div class="text-pink-200">Creators Above 1M Followers</div>
-                        </div>
-                        <div class="text-center bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-2xl p-6 border border-purple-400/30">
-                            <div class="text-3xl font-black text-white mb-2">40,000</div>
-                            <div class="text-purple-200">Target: 1% Market Share in 3 Years</div>
-                        </div>
-                    </div>
-
-                    <div class="overflow-x-auto">
-                        <table class="w-full">
-                            <thead>
-                                <tr class="border-b border-white/20">
-                                    <th class="text-left py-4 px-6 text-pink-200 font-bold">Creator Category</th>
-                                    <th class="text-center py-4 px-6 text-pink-200 font-bold">2026</th>
-                                    <th class="text-center py-4 px-6 text-pink-200 font-bold">2027</th>
-                                    <th class="text-center py-4 px-6 text-pink-200 font-bold">2028</th>
-                                    <th class="text-center py-4 px-6 text-pink-200 font-bold">Token Value</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Mega-Celebrities</td>
-                                    <td class="py-4 px-6 text-center text-blue-300 font-bold">100</td>
-                                    <td class="py-4 px-6 text-center text-purple-300 font-bold">500</td>
-                                    <td class="py-4 px-6 text-center text-pink-300 font-bold">1,000</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$10.00</td>
-                                </tr>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Macro-Influencers</td>
-                                    <td class="py-4 px-6 text-center text-blue-300 font-bold">400</td>
-                                    <td class="py-4 px-6 text-center text-purple-300 font-bold">5,000</td>
-                                    <td class="py-4 px-6 text-center text-pink-300 font-bold">13,000</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$5.00</td>
-                                </tr>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Mid-Tier Creators</td>
-                                    <td class="py-4 px-6 text-center text-blue-300 font-bold">1,000</td>
-                                    <td class="py-4 px-6 text-center text-purple-300 font-bold">5,000</td>
-                                    <td class="py-4 px-6 text-center text-pink-300 font-bold">20,000</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$2.00</td>
-                                </tr>
-                                <tr class="hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Emerging Creators</td>
-                                    <td class="py-4 px-6 text-center text-blue-300 font-bold">3,000</td>
-                                    <td class="py-4 px-6 text-center text-purple-300 font-bold">6,000</td>
-                                    <td class="py-4 px-6 text-center text-pink-300 font-bold">25,000</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$1.25</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Launch Metrics -->
-            <div class="mb-20">
-                <h2 class="text-4xl font-bold text-white text-center mb-12">🚀 Launch Metrics</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="glass-effect rounded-3xl p-10 border border-white/20 hover-lift">
-                        <h3 class="text-2xl font-bold text-white mb-8">Platform Launch Stats</h3>
-                        <div class="space-y-6">
-                            <div class="flex justify-between items-center py-3 border-b border-white/10">
-                                <span class="text-purple-200 text-lg">Creators at Launch</span>
-                                <span class="text-white font-bold text-2xl">150+</span>
-                            </div>
-                            <div class="flex justify-between items-center py-3 border-b border-white/10">
-                                <span class="text-purple-200 text-lg">Digital Assets & IPs</span>
-                                <span class="text-white font-bold text-2xl">50+</span>
-                            </div>
-                            <div class="flex justify-between items-center py-3">
-                                <span class="text-purple-200 text-lg">Total Fan Base Reach</span>
-                                <span class="text-white font-bold text-2xl">200M+</span>
+                <!-- FanKoin vs pump.fun -->
+                <div class="glass rounded-3xl p-8 mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-8">FanKoin vs pump.fun Opportunity</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <h4 class="text-2xl font-bold text-pink-300 mb-4">pump.fun</h4>
+                            <div class="space-y-2 text-purple-200">
+                                <p>$4B FDV (memecoin focus)</p>
+                                <p>$800M fees in Year 1</p>
+                                <p>1T token supply</p>
+                                <p>No direct yield to holders</p>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="glass-effect rounded-3xl p-10 border border-white/20 hover-lift">
-                        <h3 class="text-2xl font-bold text-white mb-8">Growth Targets</h3>
-                        <div class="space-y-6">
-                            <div class="flex justify-between items-center py-3 border-b border-white/10">
-                                <span class="text-purple-200 text-lg">Total Creators Available</span>
-                                <span class="text-white font-bold text-2xl">4M</span>
-                            </div>
-                            <div class="flex justify-between items-center py-3 border-b border-white/10">
-                                <span class="text-purple-200 text-lg">Target Market Share</span>
-                                <span class="text-white font-bold text-2xl">1%</span>
-                            </div>
-                            <div class="flex justify-between items-center py-3">
-                                <span class="text-purple-200 text-lg">3-Year Creator Goal</span>
-                                <span class="text-white font-bold text-2xl">40,000</span>
+                        <div class="text-center">
+                            <h4 class="text-2xl font-bold text-purple-300 mb-4">FanKoin</h4>
+                            <div class="space-y-2 text-purple-200">
+                                <p>$200B+ potential (entertainment focus)</p>
+                                <p>$42.3B projected revenues</p>
+                                <p>200M token supply</p>
+                                <p>25% direct yield to holders</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Investment Breakdown -->
-            <div class="mb-20">
-                <h2 class="text-4xl font-bold text-white text-center mb-12">📊 Investment Returns</h2>
-                <div class="glass-effect rounded-3xl p-10 border border-white/20">
-                    <div class="text-center mb-8">
-                        <h3 class="text-3xl font-bold text-white mb-4">$999 Investment Breakdown</h3>
-                        <p class="text-xl text-purple-200">Combined growth and revenue projections</p>
-                    </div>
-                    
-                    <div class="overflow-x-auto mb-8">
-                        <table class="w-full">
-                            <thead>
-                                <tr class="border-b border-white/20">
-                                    <th class="text-left py-4 px-6 text-pink-200 font-bold">Year</th>
-                                    <th class="text-center py-4 px-6 text-blue-200 font-bold">Growth</th>
-                                    <th class="text-center py-4 px-6 text-green-200 font-bold">Revenue</th>
-                                    <th class="text-center py-4 px-6 text-yellow-200 font-bold">Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-bold text-lg">2026</td>
-                                    <td class="py-4 px-6 text-center text-blue-300 font-bold">$428</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$4,279</td>
-                                    <td class="py-4 px-6 text-center text-yellow-300 font-bold text-lg">$4,707</td>
-                                </tr>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-bold text-lg">2027</td>
-                                    <td class="py-4 px-6 text-center text-blue-300 font-bold">$3,376</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$33,758</td>
-                                    <td class="py-4 px-6 text-center text-yellow-300 font-bold text-lg">$37,134</td>
-                                </tr>
-                                <tr class="hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-bold text-lg">2028</td>
-                                    <td class="py-4 px-6 text-center text-blue-300 font-bold">$8,466</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$84,656</td>
-                                    <td class="py-4 px-6 text-center text-yellow-300 font-bold text-lg">$93,122</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Key Investment Metrics -->
+                <!-- Token Value Progression -->
+                <div class="glass rounded-3xl p-8 mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-8">FanKoin Token Value Progression</h3>
                     <div class="grid md:grid-cols-3 gap-8">
-                        <div class="text-center bg-white/10 rounded-2xl p-6 border border-white/20">
-                            <div class="text-4xl font-black text-white mb-2">$999</div>
-                            <div class="text-pink-200">Initial Investment</div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-pink-300 mb-2">$102</div>
+                            <p class="text-purple-200">2026</p>
                         </div>
-                        <div class="text-center bg-white/10 rounded-2xl p-6 border border-white/20">
-                            <div class="text-4xl font-black text-green-300 mb-2">$93,122</div>
-                            <div class="text-pink-200">Total Return by 2028</div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-purple-300 mb-2">$536</div>
+                            <p class="text-purple-200">2027</p>
                         </div>
-                        <div class="text-center bg-white/10 rounded-2xl p-6 border border-white/20">
-                            <div class="text-4xl font-black text-yellow-300 mb-2">9,225%</div>
-                            <div class="text-pink-200">3-Year ROI</div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-pink-300 mb-2">$1,008</div>
+                            <p class="text-purple-200">2028</p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Market Capitalization Data -->
-            <div class="mb-20">
-                <h2 class="text-4xl font-bold text-white text-center mb-12">📈 Market Capitalization Projections</h2>
-                <div class="glass-effect rounded-3xl p-10 border border-white/20">
+                <!-- Creator Market Analysis -->
+                <div class="glass rounded-3xl p-8 mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-8">Creator Market Analysis</h3>
                     <div class="overflow-x-auto">
-                        <table class="w-full">
+                        <table class="w-full text-left">
                             <thead>
                                 <tr class="border-b border-white/20">
-                                    <th class="text-left py-4 px-6 text-pink-200 font-bold">Creator Category</th>
-                                    <th class="text-center py-4 px-6 text-pink-200 font-bold">2026 Market Cap</th>
-                                    <th class="text-center py-4 px-6 text-pink-200 font-bold">2027 Market Cap</th>
-                                    <th class="text-center py-4 px-6 text-pink-200 font-bold">2028 Market Cap</th>
+                                    <th class="py-3 px-4 font-bold">Creator Type</th>
+                                    <th class="py-3 px-4 font-bold">2026</th>
+                                    <th class="py-3 px-4 font-bold">2027</th>
+                                    <th class="py-3 px-4 font-bold">2028</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Mega-Celebrities</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$5B</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$25B</td>
-                                    <td class="py-4 px-6 text-center text-green-300 font-bold">$50B</td>
+                            <tbody class="text-purple-200">
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Mega-Celebrities</td>
+                                    <td class="py-3 px-4">100</td>
+                                    <td class="py-3 px-4">500</td>
+                                    <td class="py-3 px-4">1,000</td>
                                 </tr>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Macro-Influencers</td>
-                                    <td class="py-4 px-6 text-center text-blue-300 font-bold">$4B</td>
-                                    <td class="py-4 px-6 text-center text-blue-300 font-bold">$50B</td>
-                                    <td class="py-4 px-6 text-center text-blue-300 font-bold">$130B</td>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Macro-Influencers</td>
+                                    <td class="py-3 px-4">400</td>
+                                    <td class="py-3 px-4">5,000</td>
+                                    <td class="py-3 px-4">13,000</td>
                                 </tr>
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Mid-Tier Creators</td>
-                                    <td class="py-4 px-6 text-center text-purple-300 font-bold">$1B</td>
-                                    <td class="py-4 px-6 text-center text-purple-300 font-bold">$5B</td>
-                                    <td class="py-4 px-6 text-center text-purple-300 font-bold">$20B</td>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Mid-Tier Creators</td>
+                                    <td class="py-3 px-4">1,000</td>
+                                    <td class="py-3 px-4">5,000</td>
+                                    <td class="py-3 px-4">20,000</td>
                                 </tr>
-                                <tr class="hover:bg-white/5 transition-colors">
-                                    <td class="py-4 px-6 text-white font-semibold">Emerging Creators</td>
-                                    <td class="py-4 px-6 text-center text-pink-300 font-bold">$187.5M</td>
-                                    <td class="py-4 px-6 text-center text-pink-300 font-bold">$375M</td>
-                                    <td class="py-4 px-6 text-center text-pink-300 font-bold">$1.56B</td>
+                                <tr>
+                                    <td class="py-3 px-4 font-semibold">Emerging Creators</td>
+                                    <td class="py-3 px-4">3,000</td>
+                                    <td class="py-3 px-4">6,000</td>
+                                    <td class="py-3 px-4">25,000</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    
-                    <div class="text-center mt-8">
-                        <div class="bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl p-6 inline-block">
-                            <p class="text-white font-bold text-2xl">Total Market Cap: $201.56B by 2028</p>
+                </div>
+
+                <!-- Investment Returns -->
+                <div class="glass rounded-3xl p-8 mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-8">Investment Returns Analysis</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <h4 class="text-2xl font-bold text-pink-300 mb-4">$100 Investment</h4>
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span>Growth by 2029:</span>
+                                    <span class="font-bold text-green-400">$100,780</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Yield by 2029:</span>
+                                    <span class="font-bold text-green-400">$5,291</span>
+                                </div>
+                                <div class="flex justify-between border-t border-white/20 pt-4">
+                                    <span class="font-bold">Total Return:</span>
+                                    <span class="font-bold text-pink-300 text-xl">$106,071</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-2xl font-bold text-purple-300 mb-4">$999 Investment</h4>
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span>Growth by 2029:</span>
+                                    <span class="font-bold text-green-400">$87,831</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Yield by 2029:</span>
+                                    <span class="font-bold text-green-400">$5,291</span>
+                                </div>
+                                <div class="flex justify-between border-t border-white/20 pt-4">
+                                    <span class="font-bold">Total Return:</span>
+                                    <span class="font-bold text-pink-300 text-xl">$93,122</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Call to Action -->
-            <div class="text-center fade-in-up">
-                <div class="glass-effect rounded-3xl p-12 border border-white/20">
-                    <h2 class="text-5xl font-bold text-white mb-8">Secure Your Position</h2>
-                    <p class="text-2xl text-purple-100 mb-8 max-w-3xl mx-auto">
-                        Limited founding member tokens available. Join the entertainment revolution today.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-                        <button class="group bg-white text-purple-600 px-12 py-6 rounded-full font-bold text-xl hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center space-x-3">
-                            <span>Buy Founding Member Token - $999</span>
-                            <svg class="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
-                        
-                        <button onclick="showHome()" class="group border-3 border-white text-white px-12 py-6 rounded-full font-bold text-xl hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105 flex items-center space-x-3">
-                            <span>Back to Home</span>
-                        </button>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-6 inline-block shadow-2xl">
-                        <p class="text-white font-bold text-lg">
-                            🚀 Early adopters get exclusive access to token presale and founder benefits
-                        </p>
+                <!-- Market Cap Projections -->
+                <div class="glass rounded-3xl p-8 mb-16">
+                    <h3 class="text-3xl font-bold text-center mb-8">Market Capitalization Projections</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="border-b border-white/20">
+                                    <th class="py-3 px-4 font-bold">Creator Type</th>
+                                    <th class="py-3 px-4 font-bold">2026</th>
+                                    <th class="py-3 px-4 font-bold">2027</th>
+                                    <th class="py-3 px-4 font-bold">2028</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-purple-200">
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Mega-Celebrities</td>
+                                    <td class="py-3 px-4">$5B</td>
+                                    <td class="py-3 px-4">$25B</td>
+                                    <td class="py-3 px-4">$50B</td>
+                                </tr>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Macro-Influencers</td>
+                                    <td class="py-3 px-4">$4B</td>
+                                    <td class="py-3 px-4">$50B</td>
+                                    <td class="py-3 px-4">$130B</td>
+                                </tr>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Mid-Tier Creators</td>
+                                    <td class="py-3 px-4">$1B</td>
+                                    <td class="py-3 px-4">$5B</td>
+                                    <td class="py-3 px-4">$20B</td>
+                                </tr>
+                                <tr class="border-b border-white/10">
+                                    <td class="py-3 px-4 font-semibold">Emerging Creators</td>
+                                    <td class="py-3 px-4">$187.5M</td>
+                                    <td class="py-3 px-4">$375M</td>
+                                    <td class="py-3 px-4">$1.56B</td>
+                                </tr>
+                                <tr class="bg-pink-500/20">
+                                    <td class="py-3 px-4 font-bold">Total Market Cap</td>
+                                    <td class="py-3 px-4 font-bold">$10.19B</td>
+                                    <td class="py-3 px-4 font-bold">$80.38B</td>
+                                    <td class="py-3 px-4 font-bold">$201.56B</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
 
-            <button onclick="showHome()" class="fixed top-24 left-4 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full hover:bg-white/30 transition-all duration-300 flex items-center space-x-2">
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                </svg>
-                <span>Back</span>
-            </button>
-        </div>
+                <!-- CTA -->
+                <div class="text-center">
+                    <button class="bg-white text-purple-600 px-12 py-6 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-2xl">
+                        Invest Now - Secure Your Position
+                    </button>
+                    <p class="text-purple-200 mt-4">Limited founding member positions available</p>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-                <div class="space-y-6">
-                    <div class="flex items-center space-x-3">
-                        <svg class="h-10 w-10 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                        </svg>
-                        <span class="text-white text-3xl font-bold">Fankoin</span>
-                    </div>
-                    <p class="text-gray-400 leading-relaxed max-w-sm">
-                        Revolutionizing entertainment through blockchain technology. 
-                        Connecting fans, creators, and studios worldwide.
-                    </p>
-                </div>
-                
-                <div>
-                    <h3 class="text-white font-bold text-xl mb-6 gradient-text">Product</h3>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Token Launchpad</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">NFT Marketplace</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">RWA Platform</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Creator Tools</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-white font-bold text-xl mb-6 gradient-text">Resources</h3>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Whitepaper</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Community</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-white font-bold text-xl mb-6 gradient-text">Stay Updated</h3>
-                    <div class="space-y-4">
-                        <div class="flex">
-                            <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 bg-gray-800 border border-gray-700 rounded-l-2xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500">
-                            <button class="bg-gradient-to-r from-pink-500 to-purple-600 px-8 py-4 rounded-r-2xl text-white font-semibold hover:from-pink-600 hover:to-purple-700 transition-all">
-                                Subscribe
-                            </button>
-                        </div>
-                        <p class="text-gray-500 text-sm">🔒 No spam. Privacy guaranteed.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 mt-16 pt-12">
-                <div class="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-8 text-sm">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Security</a>
-                    </div>
-                    
-                    <div class="text-gray-400 text-sm">
-                        © 2024 Fankoin. All rights reserved.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Navigation functionality
         function showHome() {
-            document.getElementById('home-content').style.display = 'block';
-            document.getElementById('founding-member').style.display = 'none';
-            window.scrollTo(0, 0);
+            document.getElementById('home-page').classList.remove('hidden');
+            document.getElementById('founding-member-page').classList.add('hidden');
         }
 
         function showFoundingMember() {
-            document.getElementById('home-content').style.display = 'none';
-            document.getElementById('founding-member').style.display = 'block';
-            window.scrollTo(0, 0);
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('founding-member-page').classList.remove('hidden');
         }
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
-            
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                menuIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            }
-        }
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('glass-effect');
-                navbar.classList.remove('bg-transparent');
-            } else {
-                navbar.classList.remove('glass-effect');
-                navbar.classList.add('bg-transparent');
-            }
-        });
-
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
