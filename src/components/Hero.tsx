@@ -1,7 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ChevronDown, Play, Users, Zap, ArrowRight, Sparkles } from 'lucide-react';
 
 export const Hero = () => {
+  useEffect(() => {
+    // Load Helio script if not already loaded
+    if (!document.querySelector('script[src="https://embed.hel.io/assets/index-v1.js"]')) {
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.crossOrigin = 'anonymous';
+      script.src = 'https://embed.hel.io/assets/index-v1.js';
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        if (window.helioCheckout) {
+          window.helioCheckout(
+            document.getElementById("helioCheckoutContainer"),
+            {
+              paylinkId: "68a8255c6ab983716cd6d36e",
+              theme: {"themeMode":"dark"},
+              primaryColor: "#f915a6",
+              neutralColor: "#5A6578",
+            }
+          );
+        }
+      };
+    } else {
+      // Script already loaded, just initialize
+      if (window.helioCheckout) {
+        window.helioCheckout(
+          document.getElementById("helioCheckoutContainer"),
+          {
+            paylinkId: "68a8255c6ab983716cd6d36e",
+            theme: {"themeMode":"dark"},
+            primaryColor: "#f915a6",
+            neutralColor: "#5A6578",
+          }
+        );
+      }
+    }
+  }, []);
+
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-purple-700 overflow-hidden">
       {/* Enhanced background effects */}
@@ -21,11 +59,6 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-10 slide-in-left">
             <div className="space-y-8">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
-                <Sparkles className="h-5 w-5 text-pink-200" />
-                <span className="text-white font-medium">Entertainment on the Blockchain</span>
-              </div>
-              
               <h1 className="text-6xl md:text-8xl font-black text-white leading-tight text-shadow">
                 Fankoin
               </h1>
@@ -79,8 +112,17 @@ export const Hero = () => {
           <div className="relative slide-in-right">
             <div className="relative z-10 glass-effect rounded-3xl p-10 shadow-2xl border border-white/20 hover-lift">
               <div className="text-center space-y-6">
-                <h3 className="text-2xl font-bold text-white">Coming Soon</h3>
-                <p className="text-purple-100">Checkout integration will be available soon</p>
+                <h3 className="text-2xl font-bold text-white">Founding Member Digital Asset</h3>
+                <p className="text-purple-100">Join the entertainment revolution</p>
+                <a 
+                  href="https://fankoin-investor-lan-l2k9.bolt.host/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-pink-300 hover:text-pink-200 underline font-semibold block mb-6"
+                >
+                  See more projection details
+                </a>
+                <div id="helioCheckoutContainer"></div>
               </div>
             </div>
 

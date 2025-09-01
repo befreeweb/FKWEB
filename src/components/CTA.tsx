@@ -58,11 +58,6 @@ export const CTA = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-12 fade-in-up">
           <div className="space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-8 py-4 border border-white/20">
-              <Sparkles className="h-6 w-6 text-pink-200" />
-              <span className="text-white font-semibold text-lg">The Future is Here</span>
-            </div>
-            
             <h2 className="text-6xl md:text-8xl font-black text-white leading-tight text-shadow">
               Join the Future of
               <br />
