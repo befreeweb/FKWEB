@@ -23,7 +23,7 @@ export const TokenFlow = () => {
           </h2>
           
           <p className="text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
-            Understanding the token flow that powers the entire Fankoin ecosystem and creates value for all participants
+            Understanding the AI-enhanced token flow that powers the entire Fankoin ecosystem and creates intelligent value for all participants
           </p>
         </div>
 
@@ -103,8 +103,8 @@ export const TokenFlow = () => {
               </div>
               <h4 className="font-bold text-white text-xl mb-4">Token Creation</h4>
               <p className="text-purple-200 leading-relaxed">
-                Creators use $FANK to launch their fan tokens through our intuitive launchpad. 
-                No coding required, just creativity.
+                Creators use $FANK to launch their fan tokens through our AI-powered intuitive launchpad. 
+                No coding required, just creativity and AI assistance.
               </p>
             </div>
           </div>
@@ -116,8 +116,8 @@ export const TokenFlow = () => {
               </div>
               <h4 className="font-bold text-white text-xl mb-4">Fan Engagement</h4>
               <p className="text-purple-200 leading-relaxed">
-                Fans purchase tokens to access exclusive content, participate in voting, 
-                and earn rewards for their loyalty.
+                Fans purchase tokens to access exclusive content, participate in AI-enhanced voting, 
+                and earn intelligent rewards for their loyalty.
               </p>
             </div>
           </div>
@@ -129,8 +129,8 @@ export const TokenFlow = () => {
               </div>
               <h4 className="font-bold text-white text-xl mb-4">Value Creation</h4>
               <p className="text-purple-200 leading-relaxed">
-                All participants earn rewards as the ecosystem grows, creating sustainable 
-                value for fans, creators, and studios.
+                All participants earn AI-optimized rewards as the ecosystem grows, creating sustainable 
+                value for fans, creators, and studios through intelligent algorithms.
               </p>
             </div>
           </div>

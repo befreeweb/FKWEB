@@ -68,12 +68,12 @@ export const CTA = () => {
             
             <div className="space-y-6">
               <p className="text-3xl text-purple-100 font-bold max-w-4xl mx-auto">
-                Fankoin = Entertainment × Blockchain × Community
+                Fankoin = Entertainment × Blockchain × AI × Community
               </p>
               
               <p className="text-xl text-purple-200 max-w-3xl mx-auto leading-relaxed">
-                Be part of the revolution that's reshaping how creators and fans connect, 
-                engage, and prosper together in the digital entertainment ecosystem.
+                Be part of the AI-powered revolution that's reshaping how creators and fans connect, 
+                engage, and prosper together in the intelligent digital entertainment ecosystem.
               </p>
             </div>
           </div>

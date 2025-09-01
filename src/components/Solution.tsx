@@ -6,31 +6,31 @@ export const Solution = () => {
     {
       icon: <Rocket className="h-10 w-10" />,
       title: "Fan Token Launchpad",
-      description: "1-click token creation for creators with zero technical knowledge required. Launch in minutes, not months.",
+      description: "AI-powered 1-click token creation for creators with zero technical knowledge required. Launch in minutes, not months.",
       benefit: "95% faster deployment"
     },
     {
       icon: <Shield className="h-10 w-10" />,
       title: "NFT & RWA Infrastructure",
-      description: "Tokenize tickets, royalties, and IP rights with enterprise-grade security and regulatory compliance.",
+      description: "AI-enhanced tokenization of tickets, royalties, and IP rights with enterprise-grade security and regulatory compliance.",
       benefit: "Bank-level security"
     },
     {
       icon: <Vote className="h-10 w-10" />,
       title: "Governance & Fan Voting",
-      description: "True fan participation in creative decisions, project direction, and community governance.",
+      description: "AI-driven insights for fan participation in creative decisions, project direction, and community governance.",
       benefit: "100% transparent voting"
     },
     {
       icon: <Coins className="h-10 w-10" />,
       title: "Direct Creator Monetization",
-      description: "Cut out middlemen and maximize creator revenue streams through multiple tokenized channels.",
+      description: "AI-optimized revenue streams that cut out middlemen and maximize creator earnings through multiple tokenized channels.",
       benefit: "70% more revenue"
     },
     {
       icon: <Network className="h-10 w-10" />,
       title: "Entertainment-Optimized Chain",
-      description: "Blockchain built specifically for entertainment industry needs with ultra-low fees and high throughput.",
+      description: "AI-powered blockchain built specifically for entertainment industry needs with ultra-low fees and intelligent throughput optimization.",
       benefit: "99.9% uptime guaranteed"
     }
   ];
@@ -57,7 +57,7 @@ export const Solution = () => {
           </h2>
           
           <p className="text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
-            A comprehensive blockchain ecosystem designed specifically for entertainment, 
+            A comprehensive blockchain + AI ecosystem designed specifically for entertainment, 
             connecting fans, creators, and studios like never before
           </p>
         </div>

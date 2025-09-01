@@ -65,10 +65,10 @@ export const Hero = () => {
               
               <div className="space-y-4">
                 <p className="text-3xl md:text-4xl font-bold gradient-text">
-                  Tokenizing Culture, Fans & Real-World Assets
+                  Tokenizing Culture, Fans & Real-World Assets with AI
                 </p>
                 <p className="text-xl text-purple-100 font-medium leading-relaxed max-w-2xl">
-                  The first blockchain ecosystem designed specifically for entertainment, 
+                  The first blockchain + AI ecosystem designed specifically for entertainment, 
                   connecting millions of fans with their favorite creators and studios.
                 </p>
               </div>

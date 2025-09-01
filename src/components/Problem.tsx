@@ -53,7 +53,7 @@ export const Problem = () => {
           
           <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             The entertainment industry faces critical challenges that prevent creators and fans 
-            from reaching their full potential in the digital age
+            from reaching their full potential in the digital age, lacking AI-powered insights and blockchain innovation
           </p>
         </div>
 
