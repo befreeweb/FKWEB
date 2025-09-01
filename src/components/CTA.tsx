@@ -46,16 +46,10 @@ export const CTA = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-            <button className="group bg-white text-purple-600 px-12 py-6 rounded-full font-bold text-xl hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 flex items-center space-x-3">
-              <Zap className="h-7 w-7 group-hover:text-pink-500 transition-colors" />
-              <span>Get Started Now</span>
-              <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
-            </button>
-            
-            <button className="group border-3 border-white text-white px-12 py-6 rounded-full font-bold text-xl hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105 flex items-center space-x-3">
-              <Download className="h-7 w-7" />
-              <span>Download Whitepaper</span>
-            </button>
+            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+              <h3 className="text-2xl font-bold text-white mb-6">Become a Founding Member</h3>
+              <div id="helioCheckoutContainer2"></div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-20">
@@ -65,9 +59,9 @@ export const CTA = () => {
                   <Users className="h-10 w-10 text-white" />
                 </div>
               </div>
-              <div className="text-4xl font-black text-white mb-3">1M+</div>
-              <div className="text-purple-200 text-lg">Fans Ready to Join</div>
-              <div className="text-pink-200 text-sm mt-2">Growing daily</div>
+              <div className="text-4xl font-black text-white mb-3">150</div>
+              <div className="text-purple-200 text-lg">Creators Ready For Launch</div>
+              <div className="text-pink-200 text-sm mt-2">At platform launch</div>
             </div>
             
             <div className="glass-effect rounded-3xl p-8 border border-white/20 hover-lift">
@@ -76,9 +70,9 @@ export const CTA = () => {
                   <Rocket className="h-10 w-10 text-white" />
                 </div>
               </div>
-              <div className="text-4xl font-black text-white mb-3">$50M+</div>
-              <div className="text-purple-200 text-lg">In Creator Value</div>
-              <div className="text-pink-200 text-sm mt-2">Projected Year 1</div>
+              <div className="text-4xl font-black text-white mb-3">200M</div>
+              <div className="text-purple-200 text-lg">Fans</div>
+              <div className="text-pink-200 text-sm mt-2">Total reach at launch</div>
             </div>
             
             <div className="glass-effect rounded-3xl p-8 border border-white/20 hover-lift">
@@ -87,18 +81,9 @@ export const CTA = () => {
                   <Sparkles className="h-10 w-10 text-white" />
                 </div>
               </div>
-              <div className="text-4xl font-black text-white mb-3">24/7</div>
-              <div className="text-purple-200 text-lg">Global Access</div>
-              <div className="text-pink-200 text-sm mt-2">Always available</div>
-            </div>
-          </div>
-
-          <div className="pt-12">
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-6 inline-block shadow-2xl pulse-glow">
-              <p className="text-white font-bold text-lg flex items-center space-x-2">
-                <Rocket className="h-6 w-6" />
-                <span>🚀 Early adopters get exclusive access to token presale and founder benefits</span>
-              </p>
+              <div className="text-4xl font-black text-white mb-3">$100M</div>
+              <div className="text-purple-200 text-lg">Creator Value Captured</div>
+              <div className="text-pink-200 text-sm mt-2">At launch</div>
             </div>
           </div>
 

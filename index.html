@@ -5,9 +5,39 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fankoin Blockchain Entertainment Platform Website</title>
+    <script type="module" crossorigin src="https://embed.hel.io/assets/index-v1.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Initialize first checkout container
+        if (document.getElementById("helioCheckoutContainer")) {
+          window.helioCheckout(
+            document.getElementById("helioCheckoutContainer"),
+            {
+              paylinkId: "68a8255c6ab983716cd6d36e",
+              theme: {"themeMode":"dark"},
+              primaryColor: "#f915a6",
+              neutralColor: "#5A6578",
+            }
+          );
+        }
+        
+        // Initialize second checkout container
+        if (document.getElementById("helioCheckoutContainer2")) {
+          window.helioCheckout(
+            document.getElementById("helioCheckoutContainer2"),
+            {
+              paylinkId: "68a8255c6ab983716cd6d36e",
+              theme: {"themeMode":"dark"},
+              primaryColor: "#f915a6",
+              neutralColor: "#5A6578",
+            }
+          );
+        }
+      });
+    </script>
   </body>
 </html>
