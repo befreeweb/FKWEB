@@ -1,7 +1,7 @@
 import React from 'react';
 import { Check, X, Star, Trophy, Target } from 'lucide-react';
 
-export const CompetitiveAdvantage = () => {
+export const Hero = () => {
   const comparison = [
     {
       feature: "Industry Focus",
