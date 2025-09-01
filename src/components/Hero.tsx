@@ -72,8 +72,8 @@ export const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="text-4xl font-black text-white mb-2">$100M+</div>
-                <div className="text-purple-200">Value Captured</div>
-              <div className="text-purple-200">Value Captured at Launch</div>
+                <div className="text-purple-200">Value Captured at Launch</div>
+              </div>
             </div>
           </div>
         </div>
@@ -129,5 +129,3 @@ export const Hero = () => {
     </section>
   );
 };
-  )
-}
