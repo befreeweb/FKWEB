@@ -6,38 +6,41 @@ export const Team = () => {
     {
       name: "Businessofcinema.com",
       role: "The leader in digital innovation since 2005",
-      company: "In collaboration with Ethereum founding team",
+      company: "Entertainment Industry Pioneer",
       category: "Leadership",
       icon: <div className="text-2xl font-bold">BOC</div>
-    },
+    }
+  ];
+
+  const ethereumFounders = [
     {
       name: "Taylor Gerring",
       role: "Angel Investor & Co-founder",
       company: "Ethereum.org",
-      category: "Leadership",
+      category: "Ethereum Founding Team",
       icon: <div className="text-2xl font-bold">ETH</div>
-    }
-  ];
-
-  const technical = [
-    {
-      name: "Viktor Toth",
-      role: "CTO & Advisor",
-      company: "Ethereum Swarm Foundation",
-      category: "Technical",
-      icon: <Code className="h-8 w-8" />
-    },
-    {
-      name: "Sergei Cobs",
-      role: "Blockchain System Architecture",
-      company: "",
-      category: "Technical",
-      icon: <Code className="h-8 w-8" />
     },
     {
       name: "Dr. Daniel Nagy",
       role: "Founder",
       company: "Ethereum Swarm",
+      category: "Ethereum Founding Team",
+      icon: <Code className="h-8 w-8" />
+    },
+    {
+      name: "Viktor Toth",
+      role: "CTO & Advisor",
+      company: "Ethereum Swarm Foundation",
+      category: "Ethereum Founding Team",
+      icon: <Code className="h-8 w-8" />
+    }
+  ];
+
+  const technical = [
+    {
+      name: "Sergei Cobs",
+      role: "Blockchain System Architecture",
+      company: "",
       category: "Technical",
       icon: <Code className="h-8 w-8" />
     },
@@ -191,10 +194,47 @@ export const Team = () => {
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-white mb-4 text-center">Leadership Team</h3>
           <p className="text-xl text-purple-200 mb-8 text-center max-w-4xl mx-auto">
-            Bringing FanKoin - the future of entertainment blockchain in collaboration with Ethereum founding team including co-founder Taylor Gerring
+            Leading the future of entertainment blockchain with deep industry expertise and innovation
           </p>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto mb-12">
             {leadership.map((member, index) => (
+              <TeamCard key={index} member={member} index={index} />
+            ))}
+          </div>
+          
+          {/* Video Space */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="bg-gray-800 rounded-3xl p-12 border border-gray-700 text-center hover-lift">
+              <div className="mb-8">
+                <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                  <div className="text-white text-4xl">▶️</div>
+                </div>
+                <h4 className="text-3xl font-bold text-white mb-4">Meet Our Leadership</h4>
+                <p className="text-purple-200 text-lg">
+                  Watch our founder discuss the vision behind Fankoin and the future of entertainment blockchain
+                </p>
+              </div>
+              
+              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-600 relative overflow-hidden group cursor-pointer">
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 group-hover:from-pink-500/20 group-hover:to-purple-500/20 transition-opacity"></div>
+                <div className="relative z-10">
+                  <div className="text-6xl mb-4">🎬</div>
+                  <p className="text-white font-bold text-xl mb-2">Leadership Vision Video</p>
+                  <p className="text-gray-400">Coming Soon - Exclusive insights from our team</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Ethereum Founding Team */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-white mb-4 text-center">Ethereum Founding Team</h3>
+          <p className="text-xl text-purple-200 mb-8 text-center max-w-4xl mx-auto">
+            Bringing decades of blockchain expertise from the original Ethereum founding team
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {ethereumFounders.map((member, index) => (
               <TeamCard key={index} member={member} index={index} />
             ))}
           </div>
