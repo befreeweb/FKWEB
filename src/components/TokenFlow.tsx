@@ -23,7 +23,7 @@ export const TokenFlow = () => {
           </h2>
           
           <p className="text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
-            Understanding the AI-enhanced token flow that powers the entire Fankoin ecosystem and creates intelligent value for all participants
+            Understanding the AI-powered token flow that intelligently powers the entire Fankoin ecosystem and creates smart value for all participants
           </p>
         </div>
 

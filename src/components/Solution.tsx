@@ -57,7 +57,7 @@ export const Solution = () => {
           </h2>
           
           <p className="text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
-            A comprehensive blockchain + AI ecosystem designed specifically for entertainment, 
+            A comprehensive AI-enhanced blockchain ecosystem designed specifically for entertainment, 
             connecting fans, creators, and studios like never before
           </p>
         </div>
