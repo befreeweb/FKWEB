@@ -53,6 +53,22 @@ export const CTA = () => {
                 <p className="text-pink-100 mb-4">Founding Member Token</p>
                 <p className="text-purple-200 text-sm mb-6">Join the entertainment revolution</p>
                 <div id="helioCheckoutContainer2"></div>
+                
+                <script type="module" crossorigin src="https://embed.hel.io/assets/index-v1.js"></script>
+                
+                <script>
+                  document.addEventListener("DOMContentLoaded", () => {
+                    window.helioCheckout(
+                      document.getElementById("helioCheckoutContainer2"),
+                      {
+                        paylinkId: "68a8255c6ab983716cd6d36e",
+                        theme: {"themeMode":"dark"},
+                        primaryColor: "#f915a6",
+                        neutralColor: "#5A6578",
+                      }
+                    );
+                  });
+                </script>
               </div>
             </div>
           </div>

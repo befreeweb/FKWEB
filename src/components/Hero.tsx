@@ -81,6 +81,22 @@ export const Hero = () => {
                 <p className="text-white font-bold text-2xl mb-4">$999</p>
                 <p className="text-pink-100 mb-6">Founding Member Token</p>
                 <div id="helioCheckoutContainer"></div>
+                
+                <script type="module" crossorigin src="https://embed.hel.io/assets/index-v1.js"></script>
+                
+                <script>
+                  document.addEventListener("DOMContentLoaded", () => {
+                    window.helioCheckout(
+                      document.getElementById("helioCheckoutContainer"),
+                      {
+                        paylinkId: "68a8255c6ab983716cd6d36e",
+                        theme: {"themeMode":"dark"},
+                        primaryColor: "#f915a6",
+                        neutralColor: "#5A6578",
+                      }
+                    );
+                  });
+                </script>
               </div>
             </div>
 
