@@ -85,11 +85,17 @@ export const CTA = () => {
 
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-10 border border-white/20 max-w-md">
-              <h3 className="text-3xl font-bold text-white mb-8">Become a Founding Member</h3>
+              <h3 className="text-3xl font-bold text-white mb-8">Founding Member Digital Asset</h3>
               <div className="bg-white/10 rounded-2xl p-6 border border-white/20 mb-6">
-                <p className="text-white font-bold text-2xl mb-2">$999</p>
-                <p className="text-pink-100 mb-4">Founding Member Token</p>
                 <p className="text-purple-200 text-sm mb-6">Join the entertainment revolution</p>
+                <a 
+                  href="https://fankoin-investor-lan-l2k9.bolt.host/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-pink-300 hover:text-pink-200 underline font-semibold block mb-6"
+                >
+                  See more projection details
+                </a>
                 <div id="helioCheckoutContainer2"></div>
               </div>
             </div>

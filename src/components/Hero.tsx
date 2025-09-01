@@ -43,7 +43,9 @@ export const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-6">
               <button className="group bg-white text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 flex items-center justify-center space-x-3">
-                <span>Join the Ecosystem</span>
+                <span>
+                  <a href="https://remarkable-jelly-91a13e.netlify.app/" target="_blank" rel="noopener noreferrer">View Prototype</a>
+                </span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button className="group border-2 border-white text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
