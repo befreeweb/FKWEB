@@ -5,8 +5,8 @@ export const Team = () => {
   const leadership = [
     {
       name: "Businessofcinema.com",
-      role: "The leader in digital innovation since 2005",
-      company: "Entertainment Industry Pioneer",
+      role: "Legacy since 2005: Mass migrated Indian entertainment industry to Facebook & YouTube from 2009-2012",
+      company: "20 years of entertainment expertise",
       category: "Leadership",
       icon: <div className="text-2xl font-bold">BOC</div>
     }
@@ -204,23 +204,27 @@ export const Team = () => {
           
           {/* Video Space */}
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-gray-800 rounded-3xl p-12 border border-gray-700 text-center hover-lift">
+            <div className="bg-gray-800 rounded-3xl p-8 border border-gray-700 hover-lift">
               <div className="mb-8">
-                <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                  <div className="text-white text-4xl">▶️</div>
-                </div>
-                <h4 className="text-3xl font-bold text-white mb-4">Meet Our Leadership</h4>
+                <h4 className="text-3xl font-bold text-white mb-6 text-center">Leadership Vision & Journey</h4>
                 <p className="text-purple-200 text-lg">
-                  Watch our founder discuss the vision behind Fankoin and the future of entertainment blockchain
+                  BusinessofCinema.com continues its journey with 20 years of entertainment expertise along with Ethereum co-founder Taylor Gerring and the founding team of Ethereum Foundation including Daniel Nagy and Viktor Toth
                 </p>
               </div>
               
-              <div className="bg-gray-900 rounded-2xl p-8 border border-gray-600 relative overflow-hidden group cursor-pointer">
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 group-hover:from-pink-500/20 group-hover:to-purple-500/20 transition-opacity"></div>
-                <div className="relative z-10">
-                  <div className="text-6xl mb-4">🎬</div>
-                  <p className="text-white font-bold text-xl mb-2">Leadership Vision Video</p>
-                  <p className="text-gray-400">Coming Soon - Exclusive insights from our team</p>
+              <div className="bg-gray-900 rounded-2xl p-6 border border-gray-600 relative overflow-hidden">
+                <div className="aspect-video w-full">
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/-7ewK43nGDc?si=OGrsawbemUM4c_4d" 
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    allowFullScreen
+                    className="rounded-xl"
+                  ></iframe>
                 </div>
               </div>
             </div>
