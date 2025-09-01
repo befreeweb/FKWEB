@@ -2,44 +2,6 @@ import React, { useEffect } from 'react';
 import { ArrowRight, Play, Zap, Shield, Users, Sparkles, Star, Trophy } from 'lucide-react';
 
 export const Hero = () => {
-  useEffect(() => {
-    // Load Helio script if not already loaded
-    if (!document.querySelector('script[src="https://embed.hel.io/assets/index-v1.js"]')) {
-      const script = document.createElement('script');
-      script.type = 'module';
-      script.crossOrigin = 'anonymous';
-      script.src = 'https://embed.hel.io/assets/index-v1.js';
-      document.head.appendChild(script);
-
-      script.onload = () => {
-        if (window.helioCheckout) {
-          window.helioCheckout(
-            document.getElementById("helioCheckoutContainer"),
-            {
-              paylinkId: "68a8255c6ab983716cd6d36e",
-              theme: {"themeMode":"dark"},
-              primaryColor: "#f915a6",
-              neutralColor: "#5A6578",
-            }
-          );
-        }
-      };
-    } else {
-      // Script already loaded, just initialize
-      if (window.helioCheckout) {
-        window.helioCheckout(
-          document.getElementById("helioCheckoutContainer"),
-          {
-            paylinkId: "68a8255c6ab983716cd6d36e",
-            theme: {"themeMode":"dark"},
-            primaryColor: "#f915a6",
-            neutralColor: "#5A6578",
-          }
-        );
-      }
-    }
-  }, []);
-
   return (
     <section className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 relative overflow-hidden flex items-center">
       {/* Enhanced Background Effects */}
@@ -56,10 +18,10 @@ export const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-5xl mx-auto text-center">
           
-          {/* Left Content */}
-          <div className="space-y-12 slide-in-left">
+          {/* Main Content */}
+          <div className="space-y-12 fade-in-up">
             <div className="space-y-8">
               <div className="inline-flex items-center space-x-2 bg-purple-500/10 backdrop-blur-sm rounded-full px-6 py-3 border border-purple-500/20">
                 <Sparkles className="h-5 w-5 text-purple-400" />
@@ -111,39 +73,7 @@ export const Hero = () => {
               <div className="text-center">
                 <div className="text-4xl font-black text-white mb-2">$100M+</div>
                 <div className="text-purple-200">Value Captured</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Content - Helio Checkout */}
-          <div className="slide-in-right">
-            <div className="glass-effect rounded-3xl p-10 border border-white/20 hover-lift">
-              <div className="text-center mb-8">
-                <div className="flex items-center justify-center space-x-3 mb-6">
-                  <Star className="h-8 w-8 text-yellow-400" />
-                  <h3 className="text-3xl font-bold text-white">Founding Member</h3>
-                  <Star className="h-8 w-8 text-yellow-400" />
-                </div>
-                <p className="text-purple-200 text-lg mb-4">Join the AI-powered entertainment revolution</p>
-                <div className="bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-lg p-4 border border-purple-400/30 mb-6">
-                  <p className="text-white font-semibold">🚀 Early Access Benefits</p>
-                  <ul className="text-purple-200 text-sm mt-2 space-y-1">
-                    <li>• Priority platform access</li>
-                    <li>• Exclusive AI features</li>
-                    <li>• Founding member rewards</li>
-                  </ul>
-                </div>
-                <a 
-                  href="https://fankoin-investor-lan-l2k9.bolt.host/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-pink-300 hover:text-pink-200 underline font-semibold block mb-6"
-                >
-                  View detailed projections →
-                </a>
-              </div>
-              
-              <div id="helioCheckoutContainer"></div>
+              <div className="text-purple-200">Value Captured at Launch</div>
             </div>
           </div>
         </div>

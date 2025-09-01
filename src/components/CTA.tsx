@@ -2,44 +2,6 @@ import React, { useEffect } from 'react';
 import { ArrowRight, Download, Zap, Sparkles, Rocket, Users } from 'lucide-react';
 
 export const CTA = () => {
-  useEffect(() => {
-    // Load Helio script if not already loaded
-    if (!document.querySelector('script[src="https://embed.hel.io/assets/index-v1.js"]')) {
-      const script = document.createElement('script');
-      script.type = 'module';
-      script.crossOrigin = 'anonymous';
-      script.src = 'https://embed.hel.io/assets/index-v1.js';
-      document.head.appendChild(script);
-
-      script.onload = () => {
-        if (window.helioCheckout) {
-          window.helioCheckout(
-            document.getElementById("helioCheckoutContainer2"),
-            {
-              paylinkId: "68a8255c6ab983716cd6d36e",
-              theme: {"themeMode":"dark"},
-              primaryColor: "#f915a6",
-              neutralColor: "#5A6578",
-            }
-          );
-        }
-      };
-    } else {
-      // Script already loaded, just initialize
-      if (window.helioCheckout) {
-        window.helioCheckout(
-          document.getElementById("helioCheckoutContainer2"),
-          {
-            paylinkId: "68a8255c6ab983716cd6d36e",
-            theme: {"themeMode":"dark"},
-            primaryColor: "#f915a6",
-            neutralColor: "#5A6578",
-          }
-        );
-      }
-    }
-  }, []);
-
   return (
     <section className="py-24 bg-gradient-to-br from-pink-500 via-purple-500 to-purple-700 relative overflow-hidden">
       {/* Enhanced Background Effects */}
@@ -79,21 +41,11 @@ export const CTA = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-10 border border-white/20 max-w-md">
-              <h3 className="text-3xl font-bold text-white mb-8">Founding Member Digital Asset</h3>
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 mb-6">
-                <p className="text-purple-200 text-sm mb-6">Join the entertainment revolution</p>
-                <a 
-                  href="https://fankoin-investor-lan-l2k9.bolt.host/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-pink-300 hover:text-pink-200 underline font-semibold block mb-6"
-                >
-                  See more projection details
-                </a>
-                <div id="helioCheckoutContainer2"></div>
-              </div>
-            </div>
+            <button className="group bg-gradient-to-r from-pink-500 to-purple-600 text-white px-12 py-6 rounded-full font-bold text-2xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-3">
+              <Rocket className="h-8 w-8" />
+              <span>Launch Your Token</span>
+              <ArrowRight className="h-8 w-8 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-20">
