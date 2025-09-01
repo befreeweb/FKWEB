@@ -43,7 +43,7 @@ export const Hero = () => {
                 
                 <p className="text-xl text-purple-200 leading-relaxed max-w-2xl">
                   The world's first AI-powered blockchain ecosystem designed specifically for entertainment. 
-                  Connect fans, creators, and studios through intelligent tokenization, smart NFTs, and AI-driven governance.
+                  Connect fans, creators, and studios through intelligent tokenization, smart Digital Assets, and AI-driven governance.
                 </p>
               </div>
             </div>
@@ -103,7 +103,7 @@ export const Hero = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Smart Asset Tokenization</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  AI-enhanced tokenization of real-world assets like royalties, tickets, 
+                  AI-enhanced tokenization of real-world assets like royalties, tickets,
                   and IP rights with enterprise security.
                 </p>
               </div>

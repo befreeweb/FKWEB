@@ -11,7 +11,7 @@ export const Solution = () => {
     },
     {
       icon: <Shield className="h-10 w-10" />,
-      title: "NFT & RWA Infrastructure",
+      title: "Digital Asset & RWA Infrastructure", 
       description: "AI-enhanced tokenization of tickets, royalties, and IP rights with enterprise-grade security and regulatory compliance.",
       benefit: "Bank-level security"
     },
