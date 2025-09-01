@@ -76,8 +76,12 @@ export const Hero = () => {
 
           <div className="relative slide-in-right">
             <div className="relative z-10 glass-effect rounded-3xl p-10 shadow-2xl border border-white/20 hover-lift text-center">
-              <h3 className="text-2xl font-bold text-white mb-6">Become a Founding Member</h3>
-              <div id="helioCheckoutContainer"></div>
+              <h3 className="text-3xl font-bold text-white mb-8">Become a Founding Member</h3>
+              <div className="bg-white/10 rounded-2xl p-8 border border-white/20 mb-6">
+                <p className="text-white font-bold text-2xl mb-4">$999</p>
+                <p className="text-pink-100 mb-6">Founding Member Token</p>
+                <div id="helioCheckoutContainer"></div>
+              </div>
             </div>
 
             {/* Floating elements around the card */}
