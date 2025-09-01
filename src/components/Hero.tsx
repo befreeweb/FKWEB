@@ -1,145 +1,165 @@
-import React from 'react';
-import { Check, X, Star, Trophy, Target } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { ArrowRight, Play, Zap, Shield, Users, Sparkles, Star, Trophy } from 'lucide-react';
 
 export const Hero = () => {
-  const comparison = [
-    {
-      feature: "Industry Focus",
-      fankoin: "Entertainment Ecosystem",
-      chiliz: "Sports Teams",
-      pumpfun: "Meme Tokens",
-      advantage: true
-    },
-    {
-      feature: "Core Utility",
-      fankoin: "NFTs, RWA, Governance",
-      chiliz: "Voting, Merchandise", 
-      pumpfun: "Speculation Only",
-      advantage: true
-    },
-    {
-      feature: "Target Audience",
-      fankoin: "Movies, Music, OTT",
-      chiliz: "Sports Fans",
-      pumpfun: "Retail Traders",
-      advantage: true
-    },
-    {
-      feature: "Scalability",
-      fankoin: "Optimized for Culture",
-      chiliz: "Sports-Focused",
-      pumpfun: "Viral Only",
-      advantage: true
-    },
-    {
-      feature: "Real-World Assets",
-      fankoin: "✓ Full Support",
-      chiliz: "✗ Limited",
-      pumpfun: "✗ None",
-      advantage: true
-    },
-    {
-      feature: "Creator Monetization",
-      fankoin: "✓ Direct & Multi-Stream",
-      chiliz: "✗ Limited Options",
-      pumpfun: "✗ Speculation Based",
-      advantage: true
-    },
-    {
-      feature: "Long-term Sustainability",
-      fankoin: "✓ Utility-Driven",
-      chiliz: "~ Moderate",
-      pumpfun: "✗ Hype-Dependent",
-      advantage: true
+  useEffect(() => {
+    // Load Helio script if not already loaded
+    if (!document.querySelector('script[src="https://embed.hel.io/assets/index-v1.js"]')) {
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.crossOrigin = 'anonymous';
+      script.src = 'https://embed.hel.io/assets/index-v1.js';
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        if (window.helioCheckout) {
+          window.helioCheckout(
+            document.getElementById("helioCheckoutContainer"),
+            {
+              paylinkId: "68a8255c6ab983716cd6d36e",
+              theme: {"themeMode":"dark"},
+              primaryColor: "#f915a6",
+              neutralColor: "#5A6578",
+            }
+          );
+        }
+      };
+    } else {
+      // Script already loaded, just initialize
+      if (window.helioCheckout) {
+        window.helioCheckout(
+          document.getElementById("helioCheckoutContainer"),
+          {
+            paylinkId: "68a8255c6ab983716cd6d36e",
+            theme: {"themeMode":"dark"},
+            primaryColor: "#f915a6",
+            neutralColor: "#5A6578",
+          }
+        );
+      }
     }
-  ];
+  }, []);
 
   return (
-    <section className="py-24 bg-gray-900 relative overflow-hidden">
-      {/* Background effects */}
+    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 relative overflow-hidden flex items-center">
+      {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl floating-animation"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl floating-animation delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/10 rounded-full blur-3xl floating-animation delay-2000"></div>
+        
+        {/* Animated particles */}
+        <div className="absolute top-20 left-20 w-4 h-4 bg-white rounded-full animate-pulse opacity-60"></div>
+        <div className="absolute top-40 right-32 w-3 h-3 bg-pink-200 rounded-full animate-pulse opacity-80 delay-1000"></div>
+        <div className="absolute bottom-32 left-1/3 w-5 h-5 bg-purple-200 rounded-full animate-pulse opacity-50 delay-2000"></div>
+        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-white rounded-full animate-pulse opacity-70 delay-3000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 fade-in-up">
-          <div className="inline-flex items-center space-x-2 bg-yellow-500/10 backdrop-blur-sm rounded-full px-6 py-3 border border-yellow-500/20 mb-8">
-            <Trophy className="h-5 w-5 text-yellow-400" />
-            <span className="text-yellow-300 font-medium">Competitive Analysis</span>
-          </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          <h2 className="text-5xl md:text-7xl font-black text-white mb-8 text-shadow">
-            Why Fankoin
-            <span className="block gradient-text">Leads the Market</span>
-          </h2>
-          
-          <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            See how Fankoin compares to existing solutions and why we're positioned to dominate the entertainment tokenization space
-          </p>
-        </div>
-
-        <div className="overflow-x-auto mb-16">
-          <div className="min-w-full">
-            <div className="bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 shadow-2xl">
-              <div className="grid grid-cols-4 bg-gradient-to-r from-pink-600 to-purple-600">
-                <div className="p-8">
-                  <h3 className="text-white font-bold text-xl flex items-center space-x-2">
-                    <Target className="h-6 w-6" />
-                    <span>Feature</span>
-                  </h3>
-                </div>
-                <div className="p-8 bg-gradient-to-r from-pink-500 to-purple-500 relative">
-                  <div className="absolute top-2 right-2">
-                    <Star className="h-6 w-6 text-yellow-300" />
-                  </div>
-                  <h3 className="text-white font-bold text-xl">🚀 Fankoin</h3>
-                  <p className="text-pink-100 text-sm mt-1">The Future</p>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-white font-bold text-xl">Chiliz</h3>
-                  <p className="text-purple-200 text-sm mt-1">Sports Focus</p>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-white font-bold text-xl">pump.fun</h3>
-                  <p className="text-purple-200 text-sm mt-1">Meme Tokens</p>
-                </div>
+          {/* Left Content */}
+          <div className="space-y-12 slide-in-left">
+            <div className="space-y-8">
+              <div className="inline-flex items-center space-x-2 bg-purple-500/10 backdrop-blur-sm rounded-full px-6 py-3 border border-purple-500/20">
+                <Sparkles className="h-5 w-5 text-purple-400" />
+                <span className="text-purple-300 font-medium">AI-Powered Blockchain Revolution</span>
               </div>
+              
+              <h1 className="text-6xl md:text-8xl font-black text-white leading-tight text-shadow">
+                The Future of
+                <br />
+                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                  Entertainment
+                </span>
+              </h1>
+              
+              <div className="space-y-6">
+                <p className="text-2xl text-purple-100 font-bold">
+                  AI-Enhanced Blockchain + Entertainment = Fankoin
+                </p>
+                
+                <p className="text-xl text-purple-200 leading-relaxed max-w-2xl">
+                  The world's first AI-powered blockchain ecosystem designed specifically for entertainment. 
+                  Connect fans, creators, and studios through intelligent tokenization, smart NFTs, and AI-driven governance.
+                </p>
+              </div>
+            </div>
 
-              {comparison.map((row, index) => (
-                <div key={index} className={`grid grid-cols-4 border-b border-gray-700 hover:bg-gray-750 transition-colors ${index % 2 === 0 ? 'bg-gray-800' : 'bg-gray-750'}`}>
-                  <div className="p-6 flex items-center">
-                    <span className="text-gray-300 font-semibold text-lg">{row.feature}</span>
-                  </div>
-                  <div className="p-6 bg-gradient-to-r from-pink-900/30 to-purple-900/30 border-l-4 border-pink-500 relative">
-                    <div className="flex items-center justify-between">
-                      <span className="text-white font-bold text-lg">{row.fankoin}</span>
-                      {row.advantage && (
-                        <Check className="h-6 w-6 text-green-400 ml-2" />
-                      )}
-                    </div>
-                  </div>
-                  <div className="p-6 flex items-center">
-                    <span className="text-gray-400 text-lg">{row.chiliz}</span>
-                  </div>
-                  <div className="p-6 flex items-center">
-                    <span className="text-gray-400 text-lg">{row.pumpfun}</span>
-                  </div>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <button className="group bg-gradient-to-r from-pink-500 to-purple-600 text-white px-10 py-5 rounded-full font-bold text-xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-3">
+                <span>Launch Your Token</span>
+                <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              <button className="group glass-effect text-white px-10 py-5 rounded-full font-bold text-xl border border-white/20 hover:border-pink-300/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
+                <Play className="h-6 w-6" />
+                <span>Watch Demo</span>
+              </button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-8 pt-8">
+              <div className="text-center">
+                <div className="text-4xl font-black text-white mb-2">150+</div>
+                <div className="text-purple-200">Creators Ready</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-black text-white mb-2">200M+</div>
+                <div className="text-purple-200">Fan Reach</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-black text-white mb-2">$100M+</div>
+                <div className="text-purple-200">Value Captured</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content - Helio Checkout */}
+          <div className="slide-in-right">
+            <div className="glass-effect rounded-3xl p-10 border border-white/20 hover-lift">
+              <div className="text-center mb-8">
+                <div className="flex items-center justify-center space-x-3 mb-6">
+                  <Star className="h-8 w-8 text-yellow-400" />
+                  <h3 className="text-3xl font-bold text-white">Founding Member</h3>
+                  <Star className="h-8 w-8 text-yellow-400" />
                 </div>
-              ))}
+                <p className="text-purple-200 text-lg mb-4">Join the AI-powered entertainment revolution</p>
+                <div className="bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-lg p-4 border border-purple-400/30 mb-6">
+                  <p className="text-white font-semibold">🚀 Early Access Benefits</p>
+                  <ul className="text-purple-200 text-sm mt-2 space-y-1">
+                    <li>• Priority platform access</li>
+                    <li>• Exclusive AI features</li>
+                    <li>• Founding member rewards</li>
+                  </ul>
+                </div>
+                <a 
+                  href="https://fankoin-investor-lan-l2k9.bolt.host/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-pink-300 hover:text-pink-200 underline font-semibold block mb-6"
+                >
+                  View detailed projections →
+                </a>
+              </div>
+              
+              <div id="helioCheckoutContainer"></div>
             </div>
           </div>
         </div>
 
-        {/* Key differentiators */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        {/* Bottom 3 Boxes */}
+        <div className="grid md:grid-cols-3 gap-8 mt-24 fade-in-up">
           <div className="text-center hover-lift">
             <div className="gradient-border">
               <div className="gradient-border-inner text-center">
-                <div className="text-6xl mb-4">🎯</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Entertainment First</h3>
+                <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <Zap className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Launchpad</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Built specifically for the entertainment industry, not adapted from other use cases
+                  Launch fan tokens in minutes with our intelligent 1-click AI-powered platform. 
+                  No technical knowledge required.
                 </p>
               </div>
             </div>
@@ -148,10 +168,13 @@ export const Hero = () => {
           <div className="text-center hover-lift">
             <div className="gradient-border">
               <div className="gradient-border-inner text-center">
-                <div className="text-6xl mb-4">⚡</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Real Utility</h3>
+                <div className="bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <Shield className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Smart Asset Tokenization</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Tokens backed by real-world assets and genuine utility, not just speculation
+                  AI-enhanced tokenization of real-world assets like royalties, tickets, 
+                  and IP rights with enterprise security.
                 </p>
               </div>
             </div>
@@ -160,28 +183,16 @@ export const Hero = () => {
           <div className="text-center hover-lift">
             <div className="gradient-border">
               <div className="gradient-border-inner text-center">
-                <div className="text-6xl mb-4">🌍</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Global Scale</h3>
+                <div className="bg-gradient-to-r from-pink-600 to-purple-500 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Intelligent Fan Engagement</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Designed to handle millions of users across movies, music, gaming, and streaming
+                  AI-driven insights connect fans and creators through smart governance, 
+                  rewards, and personalized experiences.
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="text-center fade-in-up">
-          <div className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl p-10 shadow-2xl">
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <Trophy className="h-12 w-12 text-yellow-300" />
-              <div className="text-6xl">🏆</div>
-            </div>
-            <p className="text-white font-bold text-3xl mb-4">
-              The Only Platform Built Specifically for Entertainment Tokenization
-            </p>
-            <p className="text-pink-100 text-xl">
-              While others focus on sports or speculation, we're revolutionizing the entire entertainment industry
-            </p>
           </div>
         </div>
       </div>
