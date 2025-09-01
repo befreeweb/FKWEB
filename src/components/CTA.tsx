@@ -1,7 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowRight, Download, Zap, Sparkles, Rocket, Users } from 'lucide-react';
 
 export const CTA = () => {
+  useEffect(() => {
+    // Load Helio script if not already loaded
+    if (!document.querySelector('script[src="https://embed.hel.io/assets/index-v1.js"]')) {
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.crossOrigin = 'anonymous';
+      script.src = 'https://embed.hel.io/assets/index-v1.js';
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        if (window.helioCheckout) {
+          window.helioCheckout(
+            document.getElementById("helioCheckoutContainer2"),
+            {
+              paylinkId: "68a8255c6ab983716cd6d36e",
+              theme: {"themeMode":"dark"},
+              primaryColor: "#f915a6",
+              neutralColor: "#5A6578",
+            }
+          );
+        }
+      };
+    } else {
+      // Script already loaded, just initialize
+      if (window.helioCheckout) {
+        window.helioCheckout(
+          document.getElementById("helioCheckoutContainer2"),
+          {
+            paylinkId: "68a8255c6ab983716cd6d36e",
+            theme: {"themeMode":"dark"},
+            primaryColor: "#f915a6",
+            neutralColor: "#5A6578",
+          }
+        );
+      }
+    }
+  }, []);
+
   return (
     <section className="py-24 bg-gradient-to-br from-pink-500 via-purple-500 to-purple-700 relative overflow-hidden">
       {/* Enhanced Background Effects */}
@@ -53,22 +91,6 @@ export const CTA = () => {
                 <p className="text-pink-100 mb-4">Founding Member Token</p>
                 <p className="text-purple-200 text-sm mb-6">Join the entertainment revolution</p>
                 <div id="helioCheckoutContainer2"></div>
-                
-                <script type="module" crossorigin src="https://embed.hel.io/assets/index-v1.js"></script>
-                
-                <script>
-                  document.addEventListener("DOMContentLoaded", () => {
-                    window.helioCheckout(
-                      document.getElementById("helioCheckoutContainer2"),
-                      {
-                        paylinkId: "68a8255c6ab983716cd6d36e",
-                        theme: {"themeMode":"dark"},
-                        primaryColor: "#f915a6",
-                        neutralColor: "#5A6578",
-                      }
-                    );
-                  });
-                </script>
               </div>
             </div>
           </div>

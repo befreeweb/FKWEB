@@ -42,10 +42,10 @@ export const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6">
-              <a href="https://remarkable-jelly-91a13e.netlify.app/" target="_blank" rel="noopener noreferrer" className="group bg-white text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 flex items-center justify-center space-x-3">
-                <span>View Prototype</span>
+              <button className="group bg-white text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-pink-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-pink-500/25 flex items-center justify-center space-x-3">
+                <span>Join the Ecosystem</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
               <button className="group border-2 border-white text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
                 <Play className="h-5 w-5" />
                 <a href="https://fankoin-white-paper-q7ux.bolt.host" target="_blank" rel="noopener noreferrer">White Paper</a>
@@ -58,8 +58,8 @@ export const Hero = () => {
                   <Users className="h-6 w-6 text-pink-200" />
                 </div>
                 <div>
-                  <div className="font-bold text-2xl">200M</div>
-                  <div className="text-purple-200 text-sm">Fans</div>
+                  <div className="font-bold text-2xl">1M+</div>
+                  <div className="text-purple-200 text-sm">Active Fans</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3 text-white">
@@ -67,36 +67,18 @@ export const Hero = () => {
                   <Zap className="h-6 w-6 text-purple-200" />
                 </div>
                 <div>
-                  <div className="font-bold text-2xl">150</div>
-                  <div className="text-purple-200 text-sm">Creators Ready</div>
+                  <div className="font-bold text-2xl">50K+</div>
+                  <div className="text-purple-200 text-sm">Creators</div>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="relative slide-in-right">
-            <div className="relative z-10 glass-effect rounded-3xl p-10 shadow-2xl border border-white/20 hover-lift text-center">
-              <h3 className="text-3xl font-bold text-white mb-8">Become a Founding Member</h3>
-              <div className="bg-white/10 rounded-2xl p-8 border border-white/20 mb-6">
-                <p className="text-white font-bold text-2xl mb-4">$999</p>
-                <p className="text-pink-100 mb-6">Founding Member Token</p>
-                <div id="helioCheckoutContainer"></div>
-                
-                <script type="module" crossorigin src="https://embed.hel.io/assets/index-v1.js"></script>
-                
-                <script>
-                  document.addEventListener("DOMContentLoaded", () => {
-                    window.helioCheckout(
-                      document.getElementById("helioCheckoutContainer"),
-                      {
-                        paylinkId: "68a8255c6ab983716cd6d36e",
-                        theme: {"themeMode":"dark"},
-                        primaryColor: "#f915a6",
-                        neutralColor: "#5A6578",
-                      }
-                    );
-                  });
-                </script>
+            <div className="relative z-10 glass-effect rounded-3xl p-10 shadow-2xl border border-white/20 hover-lift">
+              <div className="text-center space-y-6">
+                <h3 className="text-2xl font-bold text-white">Coming Soon</h3>
+                <p className="text-purple-100">Checkout integration will be available soon</p>
               </div>
             </div>
 
