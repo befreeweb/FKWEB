@@ -7,41 +7,31 @@ export const BusinessModel = () => {
       icon: <DollarSign className="h-10 w-10" />,
       title: "Transaction Fees",
       description: "Small fees on all token transactions, swaps, and transfers across the platform",
-      percentage: "25%",
       color: "from-pink-500 to-pink-600",
-      revenue: "$12.5M projected"
     },
     {
       icon: <Store className="h-10 w-10" />,
       title: "NFT Marketplace",
       description: "Commission on NFT sales, trading, and secondary market transactions",
-      percentage: "20%",
       color: "from-purple-500 to-purple-600",
-      revenue: "$10M projected"
     },
     {
       icon: <Zap className="h-10 w-10" />,
       title: "Premium Launches",
       description: "Enhanced fan token launch packages with marketing and promotional support",
-      percentage: "20%",
       color: "from-pink-600 to-purple-500",
-      revenue: "$10M projected"
     },
     {
       icon: <Users className="h-10 w-10" />,
       title: "Revenue Sharing",
       description: "Percentage of creator monetization and fan engagement rewards",
-      percentage: "20%",
       color: "from-purple-600 to-pink-500",
-      revenue: "$10M projected"
     },
     {
       icon: <Building className="h-10 w-10" />,
       title: "RWA Tokenization",
       description: "Fees for tokenizing real-world assets like royalties and IP rights",
-      percentage: "15%",
       color: "from-pink-500 to-purple-600",
-      revenue: "$7.5M projected"
     }
   ];
 
@@ -84,21 +74,12 @@ export const BusinessModel = () => {
                       {stream.icon}
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-2xl font-bold text-white group-hover:text-pink-300 transition-colors">
-                          {stream.title}
-                        </h3>
-                        <div className="text-right">
-                          <span className="text-4xl font-black text-pink-400">{stream.percentage}</span>
-                          <p className="text-gray-400 text-sm">of revenue</p>
-                        </div>
-                      </div>
+                      <h3 className="text-2xl font-bold text-white group-hover:text-pink-300 transition-colors mb-4">
+                        {stream.title}
+                      </h3>
                       <p className="text-gray-300 mb-4 leading-relaxed">
                         {stream.description}
                       </p>
-                      <div className="bg-green-500/10 rounded-lg p-3 border border-green-500/20">
-                        <p className="text-green-300 font-bold">{stream.revenue}</p>
-                      </div>
                     </div>
                   </div>
                 </div>

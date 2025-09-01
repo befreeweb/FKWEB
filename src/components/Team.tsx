@@ -312,29 +312,6 @@ export const Team = () => {
           </div>
         </div>
 
-        <div className="text-center fade-in-up">
-          <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl p-12 shadow-2xl">
-            <h3 className="text-4xl font-bold text-white mb-8">Team Excellence</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div>
-                <div className="text-4xl font-black text-white mb-2">20+</div>
-                <div className="text-pink-100">Team Members</div>
-              </div>
-              <div>
-                <div className="text-4xl font-black text-white mb-2">50+</div>
-                <div className="text-pink-100">Years Combined Experience</div>
-              </div>
-              <div>
-                <div className="text-4xl font-black text-white mb-2">5+</div>
-                <div className="text-pink-100">Ethereum Founders</div>
-              </div>
-              <div>
-                <div className="text-4xl font-black text-white mb-2">100%</div>
-                <div className="text-pink-100">Commitment</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
