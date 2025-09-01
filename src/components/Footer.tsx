@@ -57,7 +57,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center space-x-2 group">
-                  <span>NFT Marketplace</span>
+                  <span>Digital Asset Marketplace</span>
                   <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </li>

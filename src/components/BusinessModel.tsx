@@ -11,8 +11,8 @@ export const BusinessModel = () => {
     },
     {
       icon: <Store className="h-10 w-10" />,
-      title: "NFT Marketplace",
-      description: "Commission on NFT sales, trading, and secondary market transactions",
+      title: "Digital Asset Marketplace",
+      description: "Commission on Digital Asset sales, trading, and secondary market transactions",
       color: "from-purple-500 to-purple-600",
     },
     {
